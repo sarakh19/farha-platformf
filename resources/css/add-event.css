@@ -1,0 +1,1023 @@
+/* =========================================================
+   فرحة – Add Event Page
+   resources/css/add-event.css
+========================================================= */
+
+
+/* =========================================================
+   Main Content
+========================================================= */
+
+.add-event-content {
+    padding-bottom: 32px;
+}
+
+
+/* =========================================================
+   Organizer Sidebar
+========================================================= */
+
+.organizer-sidebar .menu-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+
+.organizer-profile {
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+
+.organizer-avatar {
+    width: 64px;
+    height: 64px;
+
+    margin: 0 auto 10px;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+
+.organizer-profile h3 {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    color: var(--text);
+}
+
+
+.organizer-profile p {
+    margin: 4px 0 0;
+
+    font-size: 11px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   Topbar Welcome
+========================================================= */
+
+.simple-welcome {
+    font-size: 14px;
+    font-weight: 800;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+/* =========================================================
+   ADD EVENT HEADER BOX
+   نفس شكل لوحة التحكم وقائمة فعالياتي
+========================================================= */
+
+.add-event-head {
+    margin: 24px 0 18px;
+
+    min-height: 125px;
+
+    padding: 22px 24px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   Header Information
+========================================================= */
+
+.add-head-info {
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.add-head-icon {
+    width: 52px;
+    height: 52px;
+
+    min-width: 52px;
+
+    border-radius: 14px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+.add-head-info h1 {
+    margin: 0;
+
+    font-size: clamp(21px, 3vw, 28px);
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    color: var(--text);
+}
+
+
+.add-head-info p {
+    margin: 7px 0 0;
+
+    max-width: 600px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* دعم الكلاس القديم لو بقي في مكان آخر */
+
+.add-title-wrap {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.add-title-wrap h1 {
+    margin: 0;
+
+    font-size: clamp(20px, 3vw, 28px);
+
+    font-weight: 800;
+}
+
+
+.add-title-wrap p {
+    margin: 5px 0 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   Back Button
+========================================================= */
+/* =========================================================
+   Back Button
+   نفس تصميم زر إضافة فعالية جديدة
+========================================================= */
+
+.back-btn {
+    min-width: 190px;
+    height: 46px;
+
+    padding: 0 20px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.back-btn:hover {
+    background: var(--primary-dark);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 24px
+        rgba(123, 77, 243, 0.25);
+}
+
+
+.back-btn i {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   PAGE LAYOUT
+========================================================= */
+
+.add-event-layout {
+    display: grid;
+
+    grid-template-columns:
+        260px
+        minmax(0, 1fr);
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   HELP PANEL
+========================================================= */
+
+.event-help-panel {
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    padding: 20px;
+
+    position: sticky;
+
+    top: 70px;
+}
+
+
+.event-help-panel h3 {
+    margin: 0 0 16px;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    color: var(--text);
+}
+
+
+.help-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.help-item:last-child {
+    border-bottom: none;
+}
+
+
+.help-item span {
+    width: 28px;
+    height: 28px;
+
+    min-width: 28px;
+
+    border-radius: 9px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.help-item p {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #7e879a;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.event-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   FORM CARDS
+========================================================= */
+
+.form-card {
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    padding: 22px;
+}
+
+
+/* =========================================================
+   Form Section Title
+========================================================= */
+
+.form-section-title {
+    margin-bottom: 20px;
+
+    padding-bottom: 13px;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.form-section-title span {
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
+
+    border-radius: 10px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+}
+
+
+.form-section-title h2 {
+    margin: 0;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   Form Grid
+========================================================= */
+
+.form-grid {
+    display: grid;
+
+    gap: 14px;
+}
+
+
+.form-grid.two {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+}
+
+
+.form-grid.three {
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+}
+
+
+/* =========================================================
+   Form Group
+========================================================= */
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+
+.form-grid .form-group {
+    margin-bottom: 0;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   Inputs
+========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    min-height: 42px;
+
+    padding: 0 13px;
+
+    border: 1px solid var(--border);
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    color: var(--text);
+
+    outline: none;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #c9c0ec;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(123, 77, 243, 0.08);
+}
+
+
+.form-group textarea {
+    min-height: 105px;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    resize: vertical;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #b0b7c5;
+}
+
+
+/* =========================================================
+   Invalid Fields
+========================================================= */
+
+.form-group.is-invalid input,
+.form-group.is-invalid select,
+.form-group.is-invalid textarea {
+    border-color: var(--red, #dc3545);
+
+    background: #fffafa;
+}
+
+
+.event-field-error {
+    min-height: 16px;
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+    color: var(--red, #dc3545);
+}
+
+
+/* =========================================================
+   UPLOAD SECTION
+========================================================= */
+
+.upload-area {
+    display: grid;
+
+    grid-template-columns:
+        220px
+        minmax(0, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   Image Preview
+========================================================= */
+
+.image-preview-box {
+    height: 150px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: #fafbfe;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.image-preview-box.is-invalid {
+    border-color: var(--red, #dc3545);
+}
+
+
+.image-preview-box i {
+    font-size: 27px;
+
+    color: #c2c8d6;
+}
+
+
+.image-preview-box p {
+    margin: 8px 0 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.image-preview-box img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================================================
+   Upload Box
+========================================================= */
+
+.upload-box {
+    height: 150px;
+
+    padding: 16px;
+
+    border: 1.5px dashed #c7b8ff;
+
+    border-radius: 14px;
+
+    background: #fbf9ff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+
+.upload-box:hover {
+    background: var(--primary-light);
+
+    border-color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+.upload-box i {
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 9px;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+
+.upload-box strong {
+    font-size: 13px;
+
+    color: var(--text);
+}
+
+
+.upload-box p {
+    margin: 5px 0 0;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.form-actions {
+    padding: 18px 20px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   Draft + Submit Buttons
+========================================================= */
+
+.draft-btn,
+.submit-event-btn {
+    min-width: 150px;
+
+    height: 44px;
+
+    padding: 0 22px;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition),
+        color var(--transition);
+}
+
+
+/* Draft */
+
+.draft-btn {
+    background: #ffffff;
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+}
+
+
+.draft-btn:hover {
+    background: #f5f6fa;
+
+    border-color: #d8dbe5;
+}
+
+
+/* Submit */
+
+.submit-event-btn {
+    background: var(--primary);
+
+    color: #ffffff;
+
+    border: 1px solid var(--primary);
+}
+
+
+.submit-event-btn:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 24px
+        rgba(123, 77, 243, 0.28);
+}
+
+
+.draft-btn:disabled,
+.submit-event-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1100
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .add-event-layout {
+        grid-template-columns:
+            220px
+            minmax(0, 1fr);
+    }
+
+
+    .form-grid.three {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .upload-area {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - Tablet
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .add-event-head {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 20px;
+    }
+
+
+    .add-head-info {
+        align-items: flex-start;
+    }
+
+
+    .back-btn {
+        width: 100%;
+    }
+
+
+    .add-event-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .event-help-panel {
+        position: static;
+    }
+
+
+    .form-grid.two,
+    .form-grid.three {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .draft-btn,
+    .submit-event-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - Mobile
+========================================================= */
+
+@media (max-width: 575.98px) {
+
+    .add-event-content {
+        padding-bottom: 20px;
+    }
+
+
+    .add-event-head {
+        margin-top: 18px;
+
+        min-height: auto;
+
+        padding: 18px;
+    }
+
+
+    .add-head-info {
+        gap: 11px;
+    }
+
+
+    .add-head-icon {
+        width: 46px;
+        height: 46px;
+
+        min-width: 46px;
+
+        font-size: 19px;
+    }
+
+
+    .add-head-info h1 {
+        font-size: 21px;
+    }
+
+
+    .add-head-info p {
+        font-size: 12px;
+    }
+
+
+    .form-card {
+        padding: 17px;
+    }
+
+
+    .event-help-panel {
+        padding: 17px;
+    }
+
+
+    .form-section-title h2 {
+        font-size: 15px;
+    }
+
+
+    .upload-area {
+        gap: 12px;
+    }
+
+
+    .image-preview-box,
+    .upload-box {
+        height: 135px;
+    }
+
+
+    .form-actions {
+        padding: 15px;
+    }
+
+}

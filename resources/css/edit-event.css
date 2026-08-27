@@ -1,0 +1,478 @@
+/* =========================================================
+   فرحة – Edit Event Page (page-specific styles)
+   Loaded together with common.css
+========================================================= */
+
+.edit-event-content {
+  padding-bottom: 32px;
+}
+
+/* Header */
+
+.edit-event-head {
+  margin: 24px 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.edit-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.edit-title-wrap h1 {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.edit-title-wrap p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.back-btn {
+  height: 38px;
+  padding: 0 18px;
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius-sm);
+  color: var(--primary);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 800;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background var(--transition), color var(--transition);
+}
+
+.back-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Layout */
+
+.edit-event-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+/* Side panel */
+
+.edit-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: sticky;
+  top: 70px;
+}
+
+.preview-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.preview-card img {
+  width: 100%;
+  height: 145px;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.preview-card h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.edit-info-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.edit-info-box h4 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.edit-info-box p {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edit-info-box p:last-child {
+  border-bottom: none;
+}
+
+.edit-info-box span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.edit-info-box strong {
+  font-size: 12px;
+  color: var(--text);
+}
+
+.green-text {
+  color: var(--green) !important;
+}
+
+.row-status {
+  width: fit-content;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.row-status.published {
+  background: var(--green-light);
+  color: var(--green);
+}
+
+.row-status.review {
+  background: var(--orange-light);
+  color: var(--orange);
+}
+
+.row-status.finished {
+  background: #edf2ff;
+  color: var(--blue);
+}
+
+.row-status.rejected {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+.red-text {
+  color: var(--red) !important;
+}
+
+.orange-text {
+  color: var(--orange) !important;
+}
+
+.blue-text {
+  color: var(--blue) !important;
+}
+
+.rejection-reason-box {
+  background: var(--red-light);
+  border: 1px solid #ffd6d6;
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 14px;
+}
+
+.rejection-reason-box h4 {
+  color: var(--red);
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.rejection-reason-box p {
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.delete-event-btn {
+  height: 42px;
+  border-radius: 11px;
+  background: var(--red-light);
+  color: var(--red);
+  border: 1px solid #ffd6d6;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.delete-event-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(255, 107, 107, 0.25);
+}
+
+/* Form */
+
+.edit-event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.edit-form-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.form-section-title {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-section-title span {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+}
+
+.form-section-title h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.edit-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.edit-grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.edit-grid.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.edit-group {
+  margin-bottom: 14px;
+}
+
+.edit-grid .edit-group {
+  margin-bottom: 0;
+}
+
+.edit-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.edit-group input,
+.edit-group select,
+.edit-group textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 10px;
+  padding: 0 12px;
+  min-height: 40px;
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--text);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.edit-group input:focus,
+.edit-group select:focus,
+.edit-group textarea:focus {
+  border-color: var(--primary);
+}
+
+.edit-group textarea {
+  min-height: 100px;
+  padding-top: 12px;
+  resize: vertical;
+}
+
+/* Image */
+
+.edit-upload-area {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+}
+
+.current-image {
+  height: 130px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.current-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.change-image-box {
+  height: 130px;
+  border: 1.5px dashed #c7b8ff;
+  border-radius: 14px;
+  background: #fbf9ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.change-image-box:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.change-image-box i {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.change-image-box strong {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.change-image-box p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Actions */
+
+.edit-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancel-edit-btn,
+.save-edit-btn {
+  height: 42px;
+  padding: 0 24px;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.cancel-edit-btn {
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.cancel-edit-btn:hover {
+  background: #f5f6fa;
+}
+
+.save-edit-btn {
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid var(--primary);
+}
+
+.save-edit-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(123, 77, 243, 0.28);
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .edit-event-layout {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+
+  .edit-grid.three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .edit-upload-area {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .edit-event-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .edit-event-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-side-panel {
+    position: static;
+  }
+
+  .edit-grid.two,
+  .edit-grid.three {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cancel-edit-btn,
+  .save-edit-btn {
+    width: 100%;
+  }
+}

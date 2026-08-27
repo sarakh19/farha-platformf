@@ -1,0 +1,2046 @@
+/* =========================================================
+   فرحة – Common Styles
+   shared across organizer pages
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   Variables
+========================================================= */
+
+:root {
+
+  --bg: #f7f8fc;
+
+  --white: #ffffff;
+
+  --text: #202634;
+
+  --muted: #8d96aa;
+
+  --border: #edf0f5;
+
+
+  --primary: #7b4df3;
+
+  --primary-dark: #6a3ce8;
+
+  --primary-light: #f1eaff;
+
+
+  --blue-light: #edf5ff;
+
+  --blue: #4d7ee8;
+
+
+  --green: #22c66b;
+
+  --green-light: #eafff2;
+
+
+  --orange: #f5a623;
+
+  --orange-light: #fff7e5;
+
+
+  --red: #ff6b6b;
+
+  --red-light: #fff0f0;
+
+
+  --shadow:
+      0 10px 25px
+      rgba(32, 38, 52, 0.06);
+
+
+  --shadow-hover:
+      0 18px 40px
+      rgba(32, 38, 52, 0.12);
+
+
+  --radius-lg: 18px;
+
+  --radius-md: 12px;
+
+  --radius-sm: 10px;
+
+
+  --transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   Reset
+========================================================= */
+
+html {
+
+  scroll-behavior: smooth;
+}
+
+
+body {
+
+  margin: 0;
+
+  font-family:
+      "Cairo",
+      sans-serif;
+
+  background:
+      var(--bg);
+
+  color:
+      var(--text);
+}
+
+
+a {
+
+  text-decoration: none;
+
+  color: inherit;
+}
+
+
+button {
+
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   Layout
+========================================================= */
+
+.app {
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+}
+
+
+.content {
+
+  flex: 1;
+
+  min-width: 0;
+
+  min-height: 100vh;
+
+  padding:
+      0
+      clamp(14px, 3vw, 22px)
+      24px;
+}
+
+
+/* =========================================================
+   Sidebar
+========================================================= */
+
+.sidebar {
+
+  width: 190px;
+
+  min-width: 190px;
+
+  height: 100vh;
+
+  background:
+      var(--white);
+
+  border-left:
+      1px solid
+      var(--border);
+
+  padding:
+      16px
+      12px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1001;
+
+  transition:
+      right
+      var(--transition);
+}
+
+
+/* =========================================================
+   Logo
+========================================================= */
+
+.logo {
+
+  text-align: center;
+
+  margin-bottom: 26px;
+}
+
+
+.logo img {
+
+  width: 92px;
+
+  display: block;
+
+  margin:
+      0
+      auto;
+}
+
+
+/* =========================================================
+   Sidebar Menu
+========================================================= */
+
+.menu {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+.menu-link {
+
+  height: 44px;
+
+  padding:
+      0
+      14px;
+
+  border-radius:
+      var(--radius-md);
+
+  color:
+      #8c93a5;
+
+  font-size:
+      13px;
+
+  font-weight:
+      600;
+
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+
+  transition:
+
+      background
+      var(--transition),
+
+      color
+      var(--transition),
+
+      padding
+      var(--transition);
+}
+
+
+.menu-link i {
+
+  width: 18px;
+
+  text-align: center;
+
+  font-size:
+      15px;
+}
+
+
+.menu-link.active,
+.menu-link:hover {
+
+  background:
+      var(--primary-light);
+
+  color:
+      var(--primary);
+
+  padding-right:
+      18px;
+}
+
+
+/* =========================================================
+   Logout
+========================================================= */
+
+.logout {
+
+  margin-top: auto;
+
+  height: 44px;
+
+  border: none;
+
+  border-radius:
+      var(--radius-sm);
+
+  background:
+      var(--red-light);
+
+  color:
+      var(--red);
+
+  font-size:
+      13px;
+
+  font-weight:
+      700;
+
+  cursor: pointer;
+
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+
+  transition:
+
+      transform
+      var(--transition),
+
+      box-shadow
+      var(--transition);
+}
+
+
+.logout:hover {
+
+  transform:
+      translateY(-2px);
+
+  box-shadow:
+      0 8px 18px
+      rgba(
+          255,
+          107,
+          107,
+          0.25
+      );
+}
+
+
+/* =========================================================
+   Mobile Sidebar Toggle
+========================================================= */
+
+.menu-toggle {
+
+  position: fixed;
+
+  top: 16px;
+
+  left: 16px;
+
+
+  width: 46px;
+
+  height: 46px;
+
+
+  border: none;
+
+  border-radius:
+      var(--radius-md);
+
+
+  background:
+      var(--white);
+
+
+  box-shadow:
+      0 5px 20px
+      rgba(0, 0, 0, 0.15);
+
+
+  font-size:
+      22px;
+
+
+  color:
+      var(--text);
+
+
+  z-index:
+      1002;
+
+
+  display:
+      none;
+
+
+  align-items:
+      center;
+
+
+  justify-content:
+      center;
+
+
+  cursor:
+      pointer;
+
+
+  transition:
+      transform
+      var(--transition);
+}
+
+
+.menu-toggle:active {
+
+  transform:
+      scale(0.94);
+}
+
+
+.sidebar-overlay {
+
+  display:
+      none;
+
+
+  position:
+      fixed;
+
+
+  inset:
+      0;
+
+
+  background:
+      rgba(
+          15,
+          18,
+          28,
+          0.45
+      );
+
+
+  z-index:
+      1000;
+
+
+  opacity:
+      0;
+
+
+  transition:
+      opacity
+      var(--transition);
+}
+
+
+/* =========================================================
+   Topbar
+========================================================= */
+
+.topbar {
+
+  min-height:
+      60px;
+
+
+  border-bottom:
+      1px solid
+      var(--border);
+
+
+  padding:
+      10px
+      0;
+
+
+  display:
+      flex;
+
+
+  align-items:
+      center;
+
+
+  justify-content:
+      space-between;
+
+
+  flex-wrap:
+      wrap;
+
+
+  gap:
+      14px;
+}
+
+
+.user-area {
+
+  display:
+      flex;
+
+
+  align-items:
+      center;
+
+
+  gap:
+      10px;
+}
+
+
+.user-area img {
+
+  width:
+      36px;
+
+
+  height:
+      36px;
+
+
+  border-radius:
+      50%;
+
+
+  object-fit:
+      cover;
+
+
+  display:
+      block;
+
+
+  border:
+      2px solid
+      var(--primary-light);
+}
+
+
+.user-text strong {
+
+  display:
+      block;
+
+
+  font-size:
+      12px;
+
+
+  font-weight:
+      800;
+
+
+  line-height:
+      1.1;
+}
+
+
+.user-text small {
+
+  display:
+      block;
+
+
+  font-size:
+      10px;
+
+
+  color:
+      var(--muted);
+
+
+  margin-top:
+      2px;
+}
+
+
+.arrow {
+
+  font-size:
+      12px;
+
+
+  color:
+      var(--muted);
+}
+
+
+/* =========================================================
+   Old top icon style
+========================================================= */
+
+.top-icon {
+
+  width:
+      32px;
+
+
+  height:
+      32px;
+
+
+  border:
+      none;
+
+
+  border-radius:
+      50%;
+
+
+  background:
+      transparent;
+
+
+  color:
+      #5f687a;
+
+
+  cursor:
+      pointer;
+
+
+  font-size:
+      15px;
+
+
+  position:
+      relative;
+
+
+  display:
+      flex;
+
+
+  align-items:
+      center;
+
+
+  justify-content:
+      center;
+
+
+  transition:
+
+      background
+      var(--transition),
+
+      color
+      var(--transition);
+}
+
+
+.top-icon:hover {
+
+  background:
+      var(--primary-light);
+
+
+  color:
+      var(--primary);
+}
+
+
+/* =========================================================
+   Breadcrumb
+========================================================= */
+
+.breadcrumb {
+
+  font-size:
+      12px;
+
+
+  color:
+      var(--muted);
+
+
+  margin:
+      0;
+
+
+  padding:
+      0;
+
+
+  background:
+      transparent;
+}
+
+
+.breadcrumb span {
+
+  color:
+      #b8bfce;
+
+
+  margin:
+      0
+      5px;
+}
+
+
+/* =========================================================
+   Shared Title Icon
+========================================================= */
+
+.title-icon {
+
+  width:
+      44px;
+
+
+  height:
+      44px;
+
+
+  min-width:
+      44px;
+
+
+  border-radius:
+      var(--radius-md);
+
+
+  background:
+      var(--primary-light);
+
+
+  color:
+      var(--primary);
+
+
+  display:
+      grid;
+
+
+  place-items:
+      center;
+
+
+  font-size:
+      19px;
+}
+
+
+/* =========================================================
+   Shared Title Image Box
+========================================================= */
+
+.title-image-box {
+
+  width:
+      46px;
+
+
+  height:
+      46px;
+
+
+  border-radius:
+      var(--radius-md);
+
+
+  overflow:
+      hidden;
+
+
+  display:
+      flex;
+
+
+  align-items:
+      center;
+
+
+  justify-content:
+      center;
+}
+
+
+.title-image-box img {
+
+  width:
+      100%;
+
+
+  height:
+      100%;
+
+
+  object-fit:
+      contain;
+}
+
+
+/* =========================================================
+   Toast Notifications
+========================================================= */
+
+.toast-container {
+
+  position:
+      fixed;
+
+
+  top:
+      20px;
+
+
+  left:
+      20px;
+
+
+  z-index:
+      2000;
+
+
+  display:
+      flex;
+
+
+  flex-direction:
+      column;
+
+
+  gap:
+      10px;
+
+
+  max-width:
+      340px;
+}
+
+
+.app-toast {
+
+  background:
+      #fff;
+
+
+  border-radius:
+      var(--radius-md);
+
+
+  box-shadow:
+      var(--shadow-hover);
+
+
+  padding:
+      12px
+      16px;
+
+
+  border-right:
+      4px solid
+      var(--muted);
+
+
+  display:
+      flex;
+
+
+  align-items:
+      flex-start;
+
+
+  gap:
+      10px;
+
+
+  font-size:
+      13px;
+
+
+  font-weight:
+      700;
+
+
+  color:
+      var(--text);
+
+
+  line-height:
+      1.6;
+
+
+  animation:
+      toastIn
+      0.3s ease
+      both;
+}
+
+
+.app-toast.hide {
+
+  animation:
+      toastOut
+      0.25s ease
+      forwards;
+}
+
+
+.app-toast i {
+
+  font-size:
+      16px;
+
+
+  margin-top:
+      2px;
+}
+
+
+.app-toast.success {
+
+  border-color:
+      var(--green);
+}
+
+
+.app-toast.success i {
+
+  color:
+      var(--green);
+}
+
+
+.app-toast.error {
+
+  border-color:
+      var(--red);
+}
+
+
+.app-toast.error i {
+
+  color:
+      var(--red);
+}
+
+
+.app-toast.warning {
+
+  border-color:
+      var(--orange);
+}
+
+
+.app-toast.warning i {
+
+  color:
+      var(--orange);
+}
+
+
+.app-toast.info {
+
+  border-color:
+      var(--blue);
+}
+
+
+.app-toast.info i {
+
+  color:
+      var(--blue);
+}
+
+
+/* =========================================================
+   Toast Animations
+========================================================= */
+
+@keyframes toastIn {
+
+  from {
+
+    opacity:
+        0;
+
+
+    transform:
+        translateY(-12px);
+  }
+
+
+  to {
+
+    opacity:
+        1;
+
+
+    transform:
+        translateY(0);
+  }
+}
+
+
+@keyframes toastOut {
+
+  from {
+
+    opacity:
+        1;
+
+
+    transform:
+        translateY(0);
+  }
+
+
+  to {
+
+    opacity:
+        0;
+
+
+    transform:
+        translateY(-12px);
+  }
+}
+
+
+/* =========================================================
+   Toast Responsive
+========================================================= */
+
+@media (
+    max-width:
+    575.98px
+) {
+
+  .toast-container {
+
+    left:
+        12px;
+
+
+    right:
+        12px;
+
+
+    max-width:
+        none;
+  }
+}
+
+
+/* =========================================================
+   Responsive Sidebar
+========================================================= */
+
+@media (
+    max-width:
+    991.98px
+) {
+
+  .app {
+
+    flex-direction:
+        column;
+  }
+
+
+  .sidebar {
+
+    position:
+        fixed;
+
+
+    right:
+        -280px;
+
+
+    top:
+        0;
+
+
+    width:
+        260px;
+
+
+    min-width:
+        260px;
+
+
+    height:
+        100vh;
+
+
+    box-shadow:
+        var(--shadow-hover);
+  }
+
+
+  .sidebar.show {
+
+    right:
+        0;
+  }
+
+
+  .sidebar-overlay.show {
+
+    display:
+        block;
+
+
+    opacity:
+        1;
+  }
+
+
+  .content {
+
+    width:
+        100%;
+
+
+    padding-top:
+        70px;
+  }
+
+
+  .menu-toggle {
+
+    display:
+        flex;
+  }
+}
+
+
+/* =========================================================
+   Mobile Topbar
+========================================================= */
+
+@media (
+    max-width:
+    575.98px
+) {
+
+  .topbar {
+
+    justify-content:
+        center;
+
+
+    text-align:
+        center;
+  }
+
+
+  .user-area {
+
+    justify-content:
+        center;
+
+
+    flex-wrap:
+        wrap;
+  }
+}
+
+
+/* =========================================================
+   Organizer Notifications
+========================================================= */
+
+.notification-wrapper {
+
+  position:
+      relative;
+}
+
+
+/* =========================================================
+   Notification Bell
+========================================================= */
+
+.notification-button {
+
+  position:
+      relative;
+
+
+  width:
+      40px;
+
+
+  height:
+      40px;
+
+
+  padding:
+      0;
+
+
+  border:
+      none;
+
+
+  border-radius:
+      12px;
+
+
+  background:
+      transparent;
+
+
+  color:
+      #626a7d;
+
+
+  font-size:
+      19px;
+
+
+  display:
+      flex;
+
+
+  align-items:
+      center;
+
+
+  justify-content:
+      center;
+
+
+  cursor:
+      pointer;
+
+
+  transition:
+
+      background
+      var(--transition),
+
+      color
+      var(--transition),
+
+      transform
+      var(--transition);
+}
+
+
+.notification-button:hover {
+
+  background:
+      var(--primary-light);
+
+
+  color:
+      var(--primary);
+}
+
+
+.notification-button:active {
+
+  transform:
+      scale(0.94);
+}
+
+
+/* =========================================================
+   Notification Badge
+========================================================= */
+
+.notification-badge {
+
+  position:
+      absolute;
+
+
+  top:
+      0;
+
+
+  right:
+      -1px;
+
+
+  min-width:
+      18px;
+
+
+  height:
+      18px;
+
+
+  padding:
+      0
+      5px;
+
+
+  border:
+      2px solid
+      #fff;
+
+
+  border-radius:
+      20px;
+
+
+  background:
+      var(--primary);
+
+
+  color:
+      #fff;
+
+
+  font-size:
+      9px;
+
+
+  font-weight:
+      800;
+
+
+  line-height:
+      1;
+
+
+  align-items:
+      center;
+
+
+  justify-content:
+      center;
+
+
+  z-index:
+      2;
+}
+
+
+/* =========================================================
+   Notification Dropdown
+========================================================= */
+
+.notification-dropdown {
+
+  position:
+      absolute;
+
+
+  top:
+      calc(100% + 12px);
+
+
+  right:
+      0;
+
+
+  width:
+      370px;
+
+
+  max-width:
+      calc(100vw - 30px);
+
+
+  background:
+      #fff;
+
+
+  border:
+      1px solid
+      var(--border);
+
+
+  border-radius:
+      18px;
+
+
+  box-shadow:
+      0 18px 45px
+      rgba(
+          32,
+          38,
+          52,
+          0.14
+      );
+
+
+  overflow:
+      hidden;
+
+
+  z-index:
+      3000;
+
+
+  display:
+      none;
+}
+
+
+.notification-dropdown.show {
+
+  display:
+      block;
+
+
+  animation:
+      notificationDropdownIn
+      0.18s ease;
+}
+
+
+/* =========================================================
+   Dropdown Animation
+========================================================= */
+
+@keyframes notificationDropdownIn {
+
+  from {
+
+    opacity:
+        0;
+
+
+    transform:
+        translateY(-6px);
+  }
+
+
+  to {
+
+    opacity:
+        1;
+
+
+    transform:
+        translateY(0);
+  }
+}
+
+
+/* =========================================================
+   Dropdown Header
+========================================================= */
+
+.notification-dropdown-header {
+
+  min-height:
+      60px;
+
+
+  padding:
+      13px
+      16px;
+
+
+  border-bottom:
+      1px solid
+      var(--border);
+
+
+  display:
+      flex;
+
+
+  align-items:
+      center;
+
+
+  justify-content:
+      space-between;
+
+
+  gap:
+      10px;
+
+
+  background:
+      #fff;
+}
+
+
+.notification-dropdown-header strong {
+
+  color:
+      var(--text);
+
+
+  font-size:
+      15px;
+
+
+  font-weight:
+      800;
+}
+
+
+.notification-dropdown-header button {
+
+  padding:
+      5px
+      7px;
+
+
+  border:
+      none;
+
+
+  background:
+      transparent;
+
+
+  color:
+      var(--primary);
+
+
+  font-size:
+      11px;
+
+
+  font-weight:
+      700;
+
+
+  cursor:
+      pointer;
+}
+
+
+.notification-dropdown-header button:hover {
+
+  text-decoration:
+      underline;
+}
+
+
+/* =========================================================
+   Notification List
+========================================================= */
+
+.notification-list {
+
+  max-height:
+      370px;
+
+
+  overflow-y:
+      auto;
+
+
+  background:
+      #fff;
+}
+
+
+/* =========================================================
+   Notification Item
+========================================================= */
+
+.notification-item {
+
+  padding:
+      14px
+      16px;
+
+
+  border-bottom:
+      1px solid
+      #f2f3f7;
+
+
+  display:
+      flex;
+
+
+  align-items:
+      flex-start;
+
+
+  gap:
+      11px;
+
+
+  cursor:
+      pointer;
+
+
+  background:
+      #fff;
+
+
+  transition:
+      background
+      var(--transition);
+}
+
+
+.notification-item:last-child {
+
+  border-bottom:
+      none;
+}
+
+
+.notification-item:hover {
+
+  background:
+      #fafaff;
+}
+
+
+.notification-item.unread {
+
+  background:
+      #f8f5ff;
+}
+
+
+/* =========================================================
+   Notification Icon
+========================================================= */
+
+.notification-item-icon {
+
+  width:
+      38px;
+
+
+  height:
+      38px;
+
+
+  min-width:
+      38px;
+
+
+  border-radius:
+      11px;
+
+
+  background:
+      var(--primary-light);
+
+
+  color:
+      var(--primary);
+
+
+  display:
+      flex;
+
+
+  align-items:
+      center;
+
+
+  justify-content:
+      center;
+
+
+  font-size:
+      16px;
+}
+
+
+/* =========================================================
+   Notification Content
+========================================================= */
+
+.notification-item-content {
+
+  flex:
+      1;
+
+
+  min-width:
+      0;
+}
+
+
+.notification-title {
+
+  margin-bottom:
+      4px;
+
+
+  color:
+      #303746;
+
+
+  font-size:
+      13px;
+
+
+  font-weight:
+      800;
+
+
+  display:
+      flex;
+
+
+  align-items:
+      center;
+
+
+  justify-content:
+      flex-start;
+
+
+  gap:
+      7px;
+}
+
+
+.notification-title span:first-child {
+
+  overflow-wrap:
+      anywhere;
+}
+
+
+/* =========================================================
+   Unread Dot
+========================================================= */
+
+.notification-unread-dot {
+
+  width:
+      7px;
+
+
+  height:
+      7px;
+
+
+  min-width:
+      7px;
+
+
+  border-radius:
+      50%;
+
+
+  background:
+      var(--primary);
+}
+
+
+/* =========================================================
+   Notification Message
+========================================================= */
+
+.notification-message {
+
+  color:
+      #81899b;
+
+
+  font-size:
+      11.5px;
+
+
+  font-weight:
+      500;
+
+
+  line-height:
+      1.7;
+
+
+  overflow-wrap:
+      anywhere;
+}
+
+
+/* =========================================================
+   Notification Time
+========================================================= */
+
+.notification-time {
+
+  margin-top:
+      6px;
+
+
+  color:
+      #adb3c0;
+
+
+  font-size:
+      10px;
+
+
+  font-weight:
+      600;
+}
+
+
+/* =========================================================
+   Empty Notifications
+========================================================= */
+
+.notification-empty {
+
+  min-height:
+      150px;
+
+
+  padding:
+      30px
+      20px;
+
+
+  color:
+      #a2a9b8;
+
+
+  display:
+      flex;
+
+
+  flex-direction:
+      column;
+
+
+  align-items:
+      center;
+
+
+  justify-content:
+      center;
+
+
+  gap:
+      9px;
+
+
+  text-align:
+      center;
+
+
+  font-size:
+      12px;
+}
+
+
+.notification-empty i {
+
+  font-size:
+      26px;
+
+
+  color:
+      #c1b4ee;
+}
+
+
+/* =========================================================
+   Notification Scrollbar
+========================================================= */
+
+.notification-list::-webkit-scrollbar {
+
+  width:
+      5px;
+}
+
+
+.notification-list::-webkit-scrollbar-track {
+
+  background:
+      transparent;
+}
+
+
+.notification-list::-webkit-scrollbar-thumb {
+
+  background:
+      #ded9ee;
+
+
+  border-radius:
+      20px;
+}
+
+
+/* =========================================================
+   Mobile Notifications
+========================================================= */
+
+@media (
+    max-width:
+    575.98px
+) {
+
+  .notification-dropdown {
+
+    position:
+        fixed;
+
+
+    top:
+        68px;
+
+
+    right:
+        12px;
+
+
+    left:
+        12px;
+
+
+    width:
+        auto;
+
+
+    max-width:
+        none;
+  }
+
+
+  .notification-dropdown-header {
+
+    padding:
+        12px
+        14px;
+  }
+
+
+  .notification-item {
+
+    padding:
+        12px
+        14px;
+  }
+}
+
+/* =========================================================
+   ADMIN PROFILE + HEADER
+   نفس فكرة المنظم: بدون كرت، ظل خفيف حول الدائرة فقط
+========================================================= */
+
+.admin-sidebar .admin-profile {
+    margin: 4px 2px 24px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    text-align: center;
+}
+
+.admin-sidebar .admin-avatar-circle {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 12px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #f3efff,
+        #e9e4ff
+    );
+
+    color: var(--primary);
+    font-size: 26px;
+    font-weight: 800;
+
+    border: 1px solid rgba(123, 77, 243, 0.08);
+
+    box-shadow:
+        0 6px 18px rgba(123, 77, 243, 0.12);
+}
+
+.admin-sidebar .admin-profile h3 {
+    margin: 0;
+    color: #303545;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.admin-sidebar .admin-profile p {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ADMIN TOPBAR GREETING
+========================================================= */
+
+.admin-simple-welcome {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #303545;
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.admin-simple-welcome #adminName {
+    color: #303545;
+    font-weight: 800;
+}
+
+/* نتأكد أن صورة الأدمن والسهم القديم لا يظهران لو بقيا في أي صفحة قديمة */
+.admin-sidebar ~ .content .user-area > img#adminAvatar,
+.user-area > img#adminAvatar,
+.user-area .arrow {
+    display: none !important;
+}
+
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .admin-sidebar .admin-avatar-circle {
+        width: 64px;
+        height: 64px;
+        font-size: 23px;
+    }
+
+    .admin-simple-welcome {
+        font-size: 13px;
+    }
+}

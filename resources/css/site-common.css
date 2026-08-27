@@ -1,0 +1,1360 @@
+/* =========================================================
+   فرحة – Common Styles
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #f7f8fc;
+    --white: #ffffff;
+    --text: #202637;
+    --muted: #8b93a4;
+    --border: #eef0f5;
+
+    --primary: #7b4df3;
+    --primary-dark: #6a3ce8;
+    --primary-light: #f1eaff;
+
+    --pink: #ff6fa5;
+    --pink-light: #ffe8f4;
+
+    --orange: #f5a623;
+    --orange-light: #fff3d8;
+
+    --green: #22c66b;
+    --green-light: #e8fff1;
+
+    --blue: #4d7ee8;
+    --blue-light: #edf5ff;
+
+    --shadow: 0 10px 25px rgba(32, 38, 52, 0.06);
+    --shadow-hover: 0 18px 40px rgba(32, 38, 52, 0.12);
+
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+
+    --transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   General Reset
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Cairo", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* الحاوية المشتركة للصفحات */
+
+.wrap {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* =========================================================
+   Site Header
+========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+}
+
+.site-header-row {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.site-logo img {
+    display: block;
+    width: 110px;
+    height: auto;
+    max-height: 58px;
+    object-fit: contain;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.site-nav a {
+    padding: 8px 0;
+    transition: color var(--transition);
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   Login / Register
+========================================================= */
+
+.site-auth {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.site-auth .btn-login,
+.site-auth .btn-register {
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    transition: var(--transition);
+}
+
+.site-auth .btn-login {
+    color: var(--primary);
+    background: #fff;
+    border: 1.5px solid #d9caff;
+}
+
+.site-auth .btn-login:hover {
+    background: var(--primary-light);
+}
+
+.site-auth .btn-register {
+    color: #fff;
+    background: var(--primary);
+    border: 1.5px solid var(--primary);
+}
+
+.site-auth .btn-register:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+
+/* =========================================================
+   Menu Toggle
+========================================================= */
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   Sidebar Overlay
+========================================================= */
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    background: rgba(20, 22, 33, 0.45);
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+
+/* =========================================================
+   Site Footer
+========================================================= */
+
+/* =====================================================
+   FARHA FOOTER - FINAL CLEAN ALIGNED VERSION
+===================================================== */
+
+.site-footer {
+    position: relative;
+    overflow: hidden;
+    direction: rtl;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(213, 99, 206, 0.16),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(98, 112, 255, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #111937 0%,
+            #182250 48%,
+            #202d66 100%
+        );
+
+    color: #ffffff;
+
+    padding: 56px 0 18px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   Main Grid
+========================= */
+
+.site-footer-grid {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 48px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   Brand Section
+========================= */
+
+.site-footer-brand {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    text-align: right;
+
+    max-width: 310px;
+
+    justify-self: end;
+
+    margin-top: -14px;
+
+    padding-top: 0;
+}
+
+
+/* =========================
+   Logo
+========================= */
+
+.site-footer-brand > img,
+.site-footer-brand .footer-logo {
+    width: 182px;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    margin: 0 0 8px 0;
+
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    filter:
+        drop-shadow(
+            0 8px 16px
+            rgba(0, 0, 0, 0.28)
+        )
+        drop-shadow(
+            0 0 10px
+            rgba(235, 100, 202, 0.18)
+        );
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+.site-footer-brand > img:hover,
+.site-footer-brand .footer-logo:hover {
+    transform:
+        translateY(-3px)
+        scale(1.04);
+
+    filter:
+        drop-shadow(
+            0 10px 20px
+            rgba(0, 0, 0, 0.32)
+        )
+        drop-shadow(
+            0 0 14px
+            rgba(235, 100, 202, 0.25)
+        );
+}
+
+
+/* =========================
+   Brand Description
+========================= */
+
+.site-footer-brand p {
+    margin: 0;
+
+    max-width: 295px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.80
+        );
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    font-weight: 400;
+
+    text-align: right;
+}
+
+
+/* =========================
+   Social Icons
+========================= */
+
+.site-social {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+
+.site-social a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.09
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.13
+        );
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 5px 14px
+        rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.site-social a i {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+.site-social a:hover {
+    transform: translateY(-4px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(
+                225,
+                101,
+                203,
+                0.90
+            ),
+            rgba(
+                104,
+                113,
+                239,
+                0.95
+            )
+        );
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.35
+        );
+
+    box-shadow:
+        0 8px 18px
+        rgba(
+            0,
+            0,
+            0,
+            0.20
+        ),
+        0 0 15px
+        rgba(
+            190,
+            106,
+            235,
+            0.18
+        );
+}
+
+
+/* =========================
+   Footer Columns
+========================= */
+
+.site-footer-col {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    text-align: right;
+
+    padding-top: 0;
+}
+
+
+/* =========================
+   Column Titles
+========================= */
+
+.site-footer-col h4 {
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    min-height: 34px;
+
+    margin: 0 0 22px;
+
+    padding-bottom: 10px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    line-height: 1.4;
+}
+
+
+.site-footer-col h4::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 34px;
+
+    height: 3px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e96fc8,
+            #8b79f6
+        );
+}
+
+
+/* =========================
+   Column Links
+========================= */
+
+.site-footer-col a {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    margin-bottom: 11px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.76
+        );
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    line-height: 1.6;
+
+    text-decoration: none;
+
+    transition:
+        color 0.20s ease,
+        transform 0.20s ease;
+}
+
+
+.site-footer-col a::before {
+    content: "‹";
+
+    margin-left: 6px;
+
+    color: #d284e5;
+
+    font-size: 17px;
+
+    opacity: 0;
+
+    transform:
+        translateX(5px);
+
+    transition:
+        opacity 0.20s ease,
+        transform 0.20s ease;
+}
+
+
+.site-footer-col a:hover {
+    color: #ffffff;
+
+    transform:
+        translateX(-4px);
+}
+
+
+.site-footer-col a:hover::before {
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+
+/* =========================
+   Copyright
+========================= */
+
+.site-footer-copy {
+    width: min(1180px, 92%);
+
+    margin: 30px auto 0;
+
+    padding-top: 16px;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.11
+        );
+
+    text-align: center;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.58
+        );
+
+    font-size: 12.5px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 992px) {
+
+    .site-footer {
+        padding-top: 48px;
+    }
+
+    .site-footer-grid {
+        grid-template-columns:
+            1.4fr
+            1fr
+            1fr;
+
+        gap: 36px;
+    }
+
+    .site-footer-brand {
+        grid-column: 1 / -1;
+
+        max-width: 100%;
+
+        align-items: center;
+
+        text-align: center;
+
+        justify-self: center;
+
+        margin-top: 0;
+    }
+
+    .site-footer-brand p {
+        max-width: 520px;
+
+        text-align: center;
+    }
+
+    .site-social {
+        justify-content: center;
+    }
+
+    .site-footer-col {
+        padding-top: 0;
+    }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 700px) {
+
+    .site-footer {
+        padding:
+            40px
+            0
+            18px;
+
+        margin-top: 10px;
+    }
+
+    .site-footer-grid {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap:
+            30px
+            22px;
+    }
+
+    .site-footer-brand {
+        grid-column: 1 / -1;
+
+        align-items: center;
+
+        text-align: center;
+
+        justify-self: center;
+
+        margin: 0 auto;
+    }
+
+    .site-footer-brand p {
+        text-align: center;
+
+        max-width: 100%;
+    }
+
+    .site-social {
+        justify-content: center;
+    }
+
+    .site-footer-col {
+        padding-top: 0;
+    }
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 480px) {
+
+    .site-footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 27px;
+    }
+
+    .site-footer-col {
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .site-footer-col h4::after {
+        right: 50%;
+
+        transform:
+            translateX(50%);
+    }
+
+    .site-footer-col a {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .site-footer-brand > img,
+    .site-footer-brand .footer-logo {
+        width: 150px;
+    }
+
+    .site-footer-copy {
+        margin-top: 26px;
+    }
+}
+
+
+/* =========================================================
+   Toast Notifications
+========================================================= */
+
+.toast-container {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 3000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.app-toast {
+    width: min(360px, calc(100vw - 48px));
+    padding: 12px 16px;
+
+    border-right: 4px solid var(--primary);
+    border-radius: var(--radius-sm);
+
+    background: #fff;
+    box-shadow: var(--shadow-hover);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    animation: toast-in 0.25s ease;
+}
+
+.app-toast.success {
+    border-color: var(--green);
+    color: #16794a;
+}
+
+.app-toast.error {
+    border-color: #ff6b6b;
+    color: #b23b3b;
+}
+
+.app-toast.warning {
+    border-color: var(--orange);
+    color: #8a5e0d;
+}
+
+.app-toast.info {
+    border-color: var(--primary);
+    color: var(--primary-dark);
+}
+
+.app-toast.hide {
+    animation: toast-out 0.25s ease forwards;
+}
+
+@keyframes toast-in {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes toast-out {
+
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+.d-none-important {
+    display: none !important;
+}
+
+
+/* =========================================================
+   Responsive Header & Footer
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .site-header-row {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .site-nav {
+        position: fixed;
+        top: 0;
+        right: -280px;
+
+        z-index: 1100;
+
+        width: 270px;
+        height: 100vh;
+
+        padding: 90px 24px 30px;
+
+        background: #fff;
+        box-shadow: var(--shadow-hover);
+
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        gap: 20px;
+
+        transition: right var(--transition);
+    }
+
+    .site-nav.show {
+        right: 0;
+    }
+
+    .site-nav a {
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    .site-auth {
+        margin-right: auto;
+    }
+
+    .site-auth .btn-login,
+    .site-auth .btn-register {
+        padding: 0 12px;
+        font-size: 12px;
+    }
+
+    .site-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   Small Screen
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .wrap {
+        padding: 0 14px;
+    }
+
+    .site-logo img {
+        width: 90px;
+    }
+
+    .site-auth .btn-login {
+        display: none;
+    }
+
+    .site-auth .btn-register {
+        min-height: 38px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .site-footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .toast-container {
+        right: 14px;
+        left: 14px;
+    }
+
+    .app-toast {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   Logged User Menu
+   الإضافة الجديدة فقط
+========================================================= */
+
+.site-user-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   User Button
+========================================================= */
+
+.site-user-button {
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 5px 10px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.site-user-button:hover {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 5px 15px rgba(123, 77, 243, 0.1);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   Avatar
+========================================================= */
+
+.site-user-avatar {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   User Name
+========================================================= */
+
+.site-user-name {
+    white-space: nowrap;
+}
+
+.site-user-button > i {
+    color: var(--muted);
+    font-size: 11px;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+/* سهم القائمة */
+
+.site-user-button[aria-expanded="true"] > i {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   Dropdown
+========================================================= */
+
+.site-user-dropdown {
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    left: 0;
+
+    width: 210px;
+
+    padding: 8px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 35px rgba(30, 20, 60, 0.14);
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translateY(-5px);
+
+    z-index: 2000;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.site-user-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   Dropdown Links
+========================================================= */
+
+.site-user-dropdown a,
+.site-user-logout {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 12px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-align: right;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.site-user-dropdown a i,
+.site-user-logout i {
+    width: 18px;
+
+    color: var(--primary);
+
+    font-size: 15px;
+}
+
+
+.site-user-dropdown a:hover {
+    background:
+        rgba(123, 77, 243, 0.07);
+
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   Separator
+========================================================= */
+
+.site-user-dropdown hr {
+    margin: 7px 4px;
+
+    border: none;
+    border-top: 1px solid var(--border);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   Logout
+========================================================= */
+
+.site-user-logout {
+    color: #e74c3c;
+}
+
+.site-user-logout i {
+    color: #e74c3c;
+}
+
+.site-user-logout:hover {
+    background:
+        rgba(231, 76, 60, 0.08);
+
+    color: #e74c3c;
+}
+
+.site-user-logout:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   Logged User Menu - Responsive
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .site-user-menu {
+        width: auto;
+    }
+
+    .site-user-button {
+        width: auto;
+        justify-content: center;
+    }
+
+    .site-user-dropdown {
+        position: absolute;
+
+        top: calc(100% + 8px);
+
+        left: 0;
+
+        width: 200px;
+
+        margin-top: 0;
+
+        opacity: 0;
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform: translateY(-5px);
+
+        box-shadow:
+            0 12px 35px rgba(30, 20, 60, 0.14);
+    }
+
+    .site-user-dropdown.show {
+        display: block;
+
+        opacity: 1;
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   Logged User Menu - Mobile
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .site-user-button {
+        min-height: 38px;
+        padding: 4px 7px;
+        gap: 6px;
+    }
+
+    .site-user-avatar {
+        width: 30px;
+        height: 30px;
+
+        font-size: 12px;
+    }
+
+    .site-user-name {
+        max-width: 85px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .site-user-dropdown {
+        width: 190px;
+    }
+}

@@ -1,0 +1,1204 @@
+.profile-page-final {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.pf-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 248px;
+  height: 100vh;
+  background: #fff;
+  border-left: 1px solid var(--border);
+  z-index: 200;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  transition: right var(--transition);
+}
+
+.pf-side-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+  text-decoration: none;
+}
+
+.pf-side-logo img {
+  width: 118px;
+  height: auto;
+  object-fit: contain;
+}
+
+.pf-side-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pf-menu-link {
+  height: 46px;
+  border-radius: 10px;
+  padding: 0 16px;
+  color: #7e8798;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.pf-menu-link:hover {
+  background: var(--bg);
+  color: #7e8798;
+}
+
+.pf-menu-link i {
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.pf-menu-link.active {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.pf-menu-link.active::before {
+  content: "";
+  position: absolute;
+  right: -18px;
+  top: 9px;
+  width: 4px;
+  height: 28px;
+  background: var(--primary);
+  border-radius: 20px;
+}
+
+.pf-logout {
+  margin-top: auto;
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background: #fff1f1;
+  color: #f04444;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pf-logout:hover {
+  background: #ffe3e3;
+}
+
+.pf-main {
+  margin-right: 248px;
+  min-height: 100vh;
+}
+
+.pf-topbar {
+  height: 70px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pf-menu-toggle-mobile {
+  display: none;
+  border: none;
+  background: var(--primary-light);
+  color: var(--primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.pf-user-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pf-user-area img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-light);
+}
+
+.pf-user-area h4 {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.pf-user-area span {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pf-top-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.pf-top-icons a {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.pf-top-icons a:hover {
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.pf-content {
+  padding: 26px 28px 42px;
+}
+
+.pf-breadcrumb {
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.pf-breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.pf-breadcrumb a:hover,
+.pf-breadcrumb a.active {
+  color: var(--primary);
+}
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 150;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.sidebar-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 850px) {
+  .pf-sidebar {
+    right: -260px;
+    width: 248px;
+    box-shadow: var(--shadow-hover);
+  }
+
+  .pf-sidebar.show {
+    right: 0;
+  }
+
+  .pf-main {
+    margin-right: 0;
+  }
+
+  .pf-menu-toggle-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pf-topbar {
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .pf-user-area {
+    flex: 1;
+  }
+
+  .pf-content {
+    padding: 20px;
+  }
+}
+
+/* =========================================================
+   فرحة – My Events Page
+   متوافق مع my-events.blade.php + my-events.js
+========================================================= */
+
+/* =========================
+   Page heading
+========================= */
+
+.parent-events-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.parent-events-heading h1 {
+    margin: 0 0 5px;
+    color: var(--text);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.parent-events-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.parent-browse-events {
+    min-height: 44px;
+    padding: 0 19px;
+    border-radius: 11px;
+    background: linear-gradient(135deg, var(--primary), #8d63f8);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(123, 77, 243, 0.17);
+    transition: var(--transition);
+}
+
+.parent-browse-events:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 11px 24px rgba(123, 77, 243, 0.24);
+}
+
+
+/* =========================
+   Filters
+========================= */
+
+.parent-events-filters {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 16px;
+    margin-bottom: 24px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 14px;
+}
+
+.parent-event-search {
+    position: relative;
+}
+
+.parent-event-search i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 15px;
+    pointer-events: none;
+}
+
+.parent-event-search input,
+.parent-events-filters select {
+    width: 100%;
+    height: 46px;
+    border: 1px solid #eceef5;
+    border-radius: 10px;
+    background: #f9faff;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.parent-event-search input {
+    padding: 0 42px 0 15px;
+}
+
+.parent-events-filters select {
+    padding: 0 14px;
+    cursor: pointer;
+}
+
+.parent-event-search input:focus,
+.parent-events-filters select:focus {
+    background: #fff;
+    border-color: #cdbdff;
+    box-shadow: 0 0 0 3px rgba(123, 77, 243, 0.08);
+}
+
+
+/* =========================
+   Loading / error
+========================= */
+
+.parent-events-state {
+    width: 100%;
+    padding: 44px 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.parent-events-state .spinner-border {
+    margin-left: 7px;
+    color: var(--primary);
+}
+
+.parent-events-error {
+    background: #fff5f5;
+    border: 1px solid #ffdede;
+    border-radius: 16px;
+    color: #d94343;
+}
+
+.parent-events-error i {
+    font-size: 28px;
+}
+
+.parent-events-error p {
+    margin: 8px 0 14px;
+}
+
+.parent-events-error button {
+    border: none;
+    border-radius: 9px;
+    padding: 9px 17px;
+    background: #d94343;
+    color: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+/* =========================
+   Empty state
+========================= */
+
+.parent-events-empty {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 58px 25px;
+    text-align: center;
+}
+
+.parent-empty-icon {
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #f2ecff, #fbf8ff);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.parent-events-empty h2 {
+    margin: 0 0 8px;
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.parent-events-empty p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.parent-events-empty a {
+    min-height: 42px;
+    margin-top: 18px;
+    padding: 0 20px;
+    border-radius: 9px;
+    background: var(--primary);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* =========================
+   Events grid
+========================= */
+
+.parent-events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+
+/* =========================
+   Event card
+========================= */
+
+.parent-event-card {
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.parent-event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: #e4dcff;
+}
+
+
+/* =========================
+   Event image
+========================= */
+
+.parent-event-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 205px;
+    overflow: hidden;
+    background: #f2f3f8;
+}
+
+.parent-event-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.parent-event-card:hover .parent-event-image img {
+    transform: scale(1.035);
+}
+
+
+/* =========================
+   Registration status
+   class used by current JS:
+   parent-event-status
+========================= */
+
+.parent-event-status {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+
+    min-width: 64px;
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    box-shadow: 0 5px 14px rgba(20, 24, 40, 0.11);
+    backdrop-filter: blur(7px);
+}
+
+.parent-event-status.approved {
+    background: rgba(232, 255, 241, 0.96);
+    color: #1fa864;
+    border: 1px solid #c9f3db;
+}
+
+.parent-event-status.pending {
+    background: rgba(255, 248, 231, 0.97);
+    color: #d99615;
+    border: 1px solid #f6e1ad;
+}
+
+.parent-event-status.rejected,
+.parent-event-status.cancelled {
+    background: rgba(255, 239, 239, 0.97);
+    color: #df4c4c;
+    border: 1px solid #ffd2d2;
+}
+
+
+/* =========================
+   Card body
+========================= */
+
+.parent-event-body {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.parent-event-heading {
+    margin-bottom: 15px;
+}
+
+.parent-event-heading h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.55;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    transition: color var(--transition);
+}
+
+.parent-event-card:hover .parent-event-heading h3 {
+    color: var(--primary);
+}
+
+
+/* =========================
+   Event meta
+   Current JS outputs div > i + span
+========================= */
+
+.parent-event-meta {
+    display: grid;
+    gap: 10px;
+}
+
+.parent-event-meta > div {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #70798c;
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+.parent-event-meta > div i {
+    width: 20px;
+    flex: 0 0 20px;
+    text-align: center;
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.parent-event-meta > div span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   Actions
+   Current JS class names
+========================= */
+
+.parent-event-actions {
+    margin-top: auto;
+    padding-top: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.parent-event-details-btn,
+.parent-event-cancel-btn {
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: 10px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.parent-event-details-btn {
+    flex: 1;
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(123, 77, 243, 0.14);
+}
+
+.parent-event-details-btn:hover {
+    color: #fff;
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.parent-event-cancel-btn {
+    border: 1px solid #ffd6d6;
+    background: #fff5f5;
+    color: #dc4b4b;
+}
+
+.parent-event-cancel-btn:hover {
+    background: #ffeaea;
+    border-color: #ffc4c4;
+    color: #cf3b3b;
+}
+
+.parent-event-cancel-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 1100px) {
+    .parent-events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .parent-event-image {
+        height: 230px;
+    }
+}
+
+@media (max-width: 700px) {
+    .parent-events-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .parent-browse-events {
+        width: 100%;
+    }
+
+    .parent-events-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .parent-event-image {
+        height: 210px;
+    }
+
+    .parent-event-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .parent-event-details-btn,
+    .parent-event-cancel-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .pf-content {
+        padding: 18px 14px 30px;
+    }
+
+    .parent-events-heading h1 {
+        font-size: 24px;
+    }
+
+    .parent-events-filters {
+        padding: 13px;
+    }
+
+    .parent-event-image {
+        height: 185px;
+    }
+
+    .parent-event-body {
+        padding: 16px;
+    }
+
+    .parent-event-heading h3 {
+        font-size: 16px;
+    }
+
+    .parent-event-meta > div {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   APPROVED PARENT SIDEBAR + HEADER
+   Same approved design as Profile page.
+   No other My Events design changes.
+========================================================= */
+
+.pf-side-logo {
+    display: none !important;
+}
+
+.pf-parent-sidebar-head {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.pf-parent-name-circle {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    padding: 10px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+
+    background: var(--primary-light);
+    color: var(--primary);
+
+    border: 1px solid #e2dcff;
+    box-shadow: 0 7px 18px rgba(123, 77, 243, 0.13);
+
+    font-size: 11px;
+    line-height: 1.35;
+    font-weight: 800;
+}
+
+.pf-parent-role {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pf-parent-welcome {
+    margin: 0;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 800;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    white-space: nowrap;
+}
+
+.pf-parent-welcome #topUserName {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.pf-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.pf-breadcrumb-top {
+    margin-bottom: 0;
+}
+
+.pf-header-notification {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--muted);
+    font-size: 18px;
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+.pf-header-notification:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+@media (max-width: 850px) {
+    .pf-topbar-left {
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .pf-topbar {
+        height: auto;
+        min-height: 70px;
+        flex-wrap: wrap;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .pf-topbar-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+/* =========================================================
+   MY EVENTS - CONTENT BOX
+========================================================= */
+
+.parent-events-box {
+    background: #ffffff;
+
+    border: 1px solid #eeeeF5;
+    border-radius: 18px;
+
+    padding: 26px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(44, 52, 80, 0.05);
+}
+
+
+/* =========================================================
+   SMALLER / CLEANER EVENT CARDS
+========================================================= */
+
+.parent-events-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(245px, 300px)
+        );
+
+    gap: 18px;
+
+    align-items: start;
+
+    justify-content: start;
+
+    margin-top: 20px;
+}
+
+
+.parent-event-card {
+    width: 100%;
+    max-width: 300px;
+
+    background: #ffffff;
+
+    border: 1px solid #ececf4;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 6px 18px
+        rgba(44, 52, 80, 0.06);
+}
+
+
+/* صورة أصغر */
+
+.parent-event-image {
+    width: 100%;
+    height: 145px;
+
+    object-fit: cover;
+}
+
+
+/* إذا الصورة بداخل عنصر */
+
+.parent-event-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* جسم الكارد */
+
+.parent-event-body {
+    padding: 15px;
+}
+
+
+.parent-event-card h2,
+.parent-event-card h3 {
+    font-size: 17px;
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+
+    font-weight: 800;
+}
+
+
+/* معلومات التاريخ والمكان */
+
+.parent-event-meta,
+.parent-event-info {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CARD ACTIONS
+========================================================= */
+
+.parent-event-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+
+    margin-top: 14px;
+    padding-top: 13px;
+
+    border-top:
+        1px solid #f0f1f6;
+}
+
+
+/* =========================================================
+   DETAILS BUTTON
+   Primary action = Purple
+========================================================= */
+
+.parent-event-details,
+.parent-event-details-btn {
+    min-height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    background: #7664dc;
+
+    border:
+        1px solid #7664dc;
+
+    border-radius: 9px;
+
+    color: #ffffff !important;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+
+.parent-event-details:hover,
+.parent-event-details-btn:hover {
+    background: #6553cc;
+
+    border-color: #6553cc;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+   Destructive action = Light Red
+========================================================= */
+
+.parent-cancel-registration,
+.parent-event-cancel-btn {
+    min-height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    background: #fff4f5;
+
+    border:
+        1px solid #f2c6ce;
+
+    border-radius: 9px;
+
+    color: #d65368;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+
+.parent-cancel-registration:hover,
+.parent-event-cancel-btn:hover {
+    background: #d65368;
+
+    border-color: #d65368;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   HEADER BREADCRUMB CURRENT PAGE
+========================================================= */
+
+.pf-breadcrumb-top strong {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+
+/* احتياط إذا ما كان var موجود */
+
+.pf-breadcrumb-top strong {
+    color: #7664dc;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .parent-events-box {
+        padding: 20px;
+    }
+
+    .parent-events-grid {
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(230px, 1fr)
+            );
+    }
+
+    .parent-event-card {
+        max-width: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .parent-events-box {
+        padding: 15px;
+
+        border-radius: 14px;
+    }
+
+    .parent-events-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .parent-event-card {
+        max-width: 100%;
+    }
+}
+.parent-events-box {
+    background: #ffffff;
+
+    border: 1px solid #eeeeF5;
+    border-radius: 18px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(44, 52, 80, 0.05);
+}

@@ -1,0 +1,675 @@
+/* =========================================================
+   فرحة – صفحة الأسئلة الشائعة العامة
+   FAQ Public Page
+   يعمل مع site-common.css
+========================================================= */
+
+
+/* =========================================================
+   الصفحة
+========================================================= */
+
+.faq-public-page {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.faq-public-main {
+    padding: 40px 0 75px;
+    min-height: 70vh;
+}
+
+
+/* =========================================================
+   عنوان الصفحة
+========================================================= */
+
+.faq-public-head {
+    text-align: center;
+    max-width: 680px;
+    margin: 10px auto 30px;
+}
+
+.faq-public-head h1 {
+    margin: 0 0 10px;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.faq-public-head p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   زر الواتساب
+========================================================= */
+
+.faq-whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 15px 20px;
+
+    background: #25D366;
+    color: #fff;
+
+    border: none;
+    border-radius: 14px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.faq-whatsapp-btn:hover {
+    background: #20bd5a;
+    color: #fff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 24px rgba(37, 211, 102, 0.28);
+}
+
+.faq-whatsapp-btn i {
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   مربع البحث
+========================================================= */
+
+.faq-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    padding: 14px 18px;
+
+    margin-bottom: 22px;
+
+    box-shadow: 0 4px 16px rgba(30, 20, 60, 0.05);
+
+    color: var(--muted);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.faq-search-bar:focus-within {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(123, 77, 243, 0.08),
+        0 5px 18px rgba(30, 20, 60, 0.06);
+}
+
+.faq-search-bar i {
+    color: var(--primary);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.faq-search-bar input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    color: var(--text);
+}
+
+.faq-search-bar input::placeholder {
+    color: #a3a3ad;
+}
+
+
+/* =========================================================
+   تقسيم الفئات + الأسئلة
+========================================================= */
+
+.faq-shell {
+    display: grid;
+
+    grid-template-columns: 230px minmax(0, 1fr);
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   قائمة الفئات
+========================================================= */
+
+.faq-categories {
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    padding: 18px;
+
+    box-shadow: 0 5px 20px rgba(30, 20, 60, 0.06);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    position: sticky;
+    top: 100px;
+}
+
+.faq-cat-title {
+    font-size: 14px;
+    font-weight: 800;
+
+    color: var(--muted);
+
+    margin: 0 0 10px;
+
+    padding: 0 5px;
+}
+
+.faq-cat-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    text-align: right;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 12px 13px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.faq-cat-item i {
+    width: 20px;
+
+    text-align: center;
+
+    color: var(--primary);
+
+    font-size: 15px;
+
+    transition: color 0.2s ease;
+}
+
+.faq-cat-item:hover {
+    background: rgba(123, 77, 243, 0.07);
+
+    color: var(--primary);
+
+    transform: translateX(-2px);
+}
+
+.faq-cat-item.active {
+    background: var(--primary);
+
+    color: #fff;
+
+    font-weight: 700;
+
+    box-shadow: 0 5px 12px rgba(123, 77, 243, 0.2);
+}
+
+.faq-cat-item.active i {
+    color: #fff;
+}
+
+
+/* =========================================================
+   قائمة الأسئلة
+========================================================= */
+
+.faq-list {
+    min-width: 0;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    padding: 8px 20px;
+
+    box-shadow: 0 5px 20px rgba(30, 20, 60, 0.06);
+}
+
+
+/* =========================================================
+   السؤال الواحد
+========================================================= */
+
+.faq-item {
+    border-bottom: 1px solid var(--border);
+
+    padding: 5px 0;
+
+    transition: background 0.2s ease;
+}
+
+.faq-item:last-of-type {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   زر السؤال
+========================================================= */
+
+.faq-question {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    text-align: right;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 17px 5px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.faq-question:hover {
+    color: var(--primary);
+}
+
+.faq-question span {
+    flex: 1;
+}
+
+
+/* السهم */
+
+.faq-question i {
+    font-size: 12px;
+
+    color: var(--primary);
+
+    flex-shrink: 0;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* عند فتح السؤال */
+
+.faq-item.open .faq-question {
+    color: var(--primary);
+}
+
+.faq-item.open .faq-question i {
+    transform: rotate(-90deg);
+}
+
+
+/* دعم JS في حال كان يستخدم active بدل open */
+
+.faq-item.active .faq-question {
+    color: var(--primary);
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(-90deg);
+}
+
+
+/* =========================================================
+   الإجابة
+========================================================= */
+
+.faq-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.9;
+
+    padding: 0 5px;
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease;
+}
+
+.faq-answer p {
+    margin: 0;
+
+    padding:
+        0
+        28px
+        17px
+        0;
+}
+
+
+/* السؤال المفتوح */
+
+.faq-item.open .faq-answer {
+    max-height: 350px;
+
+    opacity: 1;
+}
+
+
+/* في حال الـ JS يستخدم active */
+
+.faq-item.active .faq-answer {
+    max-height: 350px;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   عند البحث وعدم وجود نتائج
+========================================================= */
+
+.faq-no-results {
+    width: 100%;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    padding: 40px 15px;
+
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.faq-no-results::before {
+    content: "\F52A";
+
+    font-family: "bootstrap-icons";
+
+    display: block;
+
+    font-size: 34px;
+
+    color: #c5c0d2;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   إخفاء العناصر عند البحث / الفلترة
+========================================================= */
+
+.faq-item.faq-hidden {
+    display: none;
+}
+
+.faq-item.hidden {
+    display: none;
+}
+
+.d-none-important {
+    display: none !important;
+}
+
+
+/* =========================================================
+   Breadcrumb
+========================================================= */
+
+.faq-public-page .site-breadcrumb {
+    margin-bottom: 18px;
+}
+
+.faq-public-page .site-breadcrumb a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   Responsive - Tablet
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .faq-public-main {
+        padding: 30px 0 60px;
+    }
+
+    .faq-shell {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .faq-categories {
+        position: static;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        overflow-x: auto;
+
+        gap: 8px;
+
+        padding: 12px;
+
+        scrollbar-width: thin;
+    }
+
+    .faq-cat-title {
+        display: none;
+    }
+
+    .faq-cat-item {
+        width: auto;
+
+        flex: 0 0 auto;
+
+        white-space: nowrap;
+
+        padding: 10px 14px;
+    }
+
+    .faq-cat-item:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   Responsive - Mobile
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .faq-public-main {
+        padding: 25px 0 50px;
+    }
+
+    .faq-public-head {
+        margin-bottom: 22px;
+
+        padding: 0 8px;
+    }
+
+    .faq-public-head h1 {
+        font-size: 25px;
+    }
+
+    .faq-public-head p {
+        font-size: 13px;
+    }
+
+
+    /* WhatsApp */
+
+    .faq-whatsapp-btn {
+        padding: 13px 14px;
+
+        font-size: 13px;
+
+        border-radius: 12px;
+    }
+
+
+    /* Search */
+
+    .faq-search-bar {
+        padding: 12px 14px;
+
+        border-radius: 12px;
+
+        margin-bottom: 16px;
+    }
+
+
+    /* Categories */
+
+    .faq-categories {
+        border-radius: 12px;
+    }
+
+    .faq-cat-item {
+        font-size: 12px;
+
+        padding: 9px 12px;
+    }
+
+
+    /* FAQ */
+
+    .faq-list {
+        padding: 5px 14px;
+
+        border-radius: 12px;
+    }
+
+    .faq-question {
+        font-size: 13px;
+
+        padding: 15px 3px;
+
+        gap: 10px;
+    }
+
+    .faq-answer {
+        font-size: 12.5px;
+
+        line-height: 1.8;
+    }
+
+    .faq-answer p {
+        padding:
+            0
+            22px
+            15px
+            0;
+    }
+}
+
+
+/* =========================================================
+   Responsive - Small Mobile
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .faq-public-head h1 {
+        font-size: 23px;
+    }
+
+    .faq-whatsapp-btn {
+        font-size: 12px;
+
+        gap: 7px;
+    }
+
+    .faq-whatsapp-btn i {
+        font-size: 17px;
+    }
+
+    .faq-search-bar input {
+        font-size: 13px;
+    }
+
+    .faq-list {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .faq-question {
+        font-size: 12.5px;
+    }
+}

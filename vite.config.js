@@ -1,0 +1,73 @@
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: [
+                'resources/css/site-common.css',
+                'resources/css/login.css',
+                'resources/css/home.css',
+'resources/css/register.css',
+'resources/css/dashboard-common.css',
+'resources/css/organizer-dashboard.css',
+'resources/js/organizer-dashboard.js',
+'resources/js/register.js',
+
+                'resources/js/site-common.js',
+                'resources/js/messages.js',
+                'resources/js/login.js',
+                'resources/js/home.js',
+'resources/css/add-event.css',
+'resources/js/add-event.js',
+'resources/css/organizer-events.css',
+'resources/js/organizer-events.js',
+'resources/css/edit-event.css',
+'resources/js/edit-event.js',
+'resources/css/admin-dashboard.css',
+'resources/js/admin-dashboard.js',
+'resources/css/review-events.css',
+'resources/js/review-events.js',
+'resources/css/users.css',
+'resources/js/users.js',
+'resources/css/categories.css',
+'resources/js/categories.js',
+'resources/css/registrations.css',
+'resources/js/registrations.js',
+'resources/css/profile.css',
+'resources/js/profile.js',
+'resources/css/my-events.css',
+'resources/js/my-events.js',
+'resources/css/report.css',
+'resources/js/report.js',
+'resources/css/settings.css',
+'resources/js/settings.js',
+'resources/css/site-common.css',
+'resources/js/site-common.js',
+'resources/css/home.css',
+'resources/js/home.js',
+'resources/css/events.css',
+'resources/js/events.js',
+'resources/css/about.css',
+'resources/js/about.js',
+'resources/css/organizers.css',
+'resources/js/organizers.js',
+'resources/css/contact.css',
+'resources/js/contact.js',
+'resources/css/faq.css',
+'resources/js/faq.js',
+'notifications.js',
+'notifications.css',
+
+            ],
+            refresh: true,
+        }),
+        tailwindcss(),
+    ],
+    server: {
+        watch: {
+            ignored: ['**/storage/framework/views/**'],
+        },
+    },
+});

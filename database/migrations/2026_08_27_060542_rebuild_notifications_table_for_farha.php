@@ -1,0 +1,53 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        /*
+        |--------------------------------------------------------------------------
+        | نحذف فقط جدول notifications القديم
+        |--------------------------------------------------------------------------
+        */
+
+        Schema::dropIfExists('notifications');
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | جدول الإشعارات الخاص بمشروع فرحة
+        |--------------------------------------------------------------------------
+        */
+
+        Schema::create('notifications', function (Blueprint $table) {
+
+            $table->id();
+
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->cascadeOnDelete();
+
+            $table->string('title');
+
+            $table->text('message')->nullable();
+
+            $table->string('type')->default('system');
+
+            $table->boolean('is_read')->default(false);
+
+            $table->string('url')->nullable();
+
+            $table->timestamps();
+        });
+    }
+
+
+    public function down(): void
+    {
+        Schema::dropIfExists('notifications');
+    }
+};

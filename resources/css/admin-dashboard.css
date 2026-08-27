@@ -1,0 +1,1381 @@
+/* =========================================================
+   فرحة – Admin Dashboard
+========================================================= */
+
+.admin-content {
+  padding-bottom: 32px;
+}
+
+
+.admin-sidebar .menu-link.active {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+
+/* =========================================================
+   Breadcrumb
+========================================================= */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.breadcrumb a {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+
+.breadcrumb a:hover {
+  color: var(--primary);
+}
+
+
+.breadcrumb a.active {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   Admin Avatar
+========================================================= */
+
+.admin-avatar-box {
+  width: 38px;
+  height: 38px;
+
+  min-width: 38px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.admin-avatar-box img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+.admin-avatar-box span {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   Date
+========================================================= */
+
+.admin-date-row {
+  margin: 18px 0 16px;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.date-filter {
+  height: 36px;
+
+  padding: 0 16px;
+
+  border: 1px solid var(--border);
+
+  background: #fff;
+
+  color: #7e879a;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.date-filter:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+
+/* =========================================================
+   Statistics
+========================================================= */
+
+.admin-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+
+.admin-stat-card {
+  min-height: 112px;
+
+  background: #fff;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    var(--shadow);
+
+  padding: 16px;
+
+  display: grid;
+
+  grid-template-columns:
+    52px 1fr;
+
+  align-items: center;
+
+  gap: 14px;
+
+  direction: ltr;
+
+  transition:
+    transform
+    var(--transition),
+    box-shadow
+    var(--transition);
+}
+
+
+.admin-stat-card:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    var(--shadow-hover);
+}
+
+
+.admin-stat-card > div:last-child {
+  direction: rtl;
+  text-align: right;
+}
+
+
+.admin-stat-card p {
+  margin:
+    0 0 6px;
+
+  color:
+    var(--muted);
+
+  font-size:
+    13px;
+}
+
+
+.admin-stat-card h2 {
+  margin:
+    0 0 7px;
+
+  font-size:
+    28px;
+
+  line-height:
+    1;
+
+  font-weight:
+    800;
+
+  color:
+    var(--text);
+}
+
+
+.admin-stat-card small {
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    4px;
+}
+
+
+.admin-stat-card small.up {
+  color:
+    var(--green);
+}
+
+
+.admin-stat-card small.down {
+  color:
+    var(--orange);
+}
+
+
+/* =========================================================
+   Statistic Icons
+========================================================= */
+
+.admin-stat-icon-img {
+  width:
+    52px;
+
+  height:
+    52px;
+
+  border-radius:
+    14px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  font-size:
+    23px;
+}
+
+
+.stat-users {
+  background:
+    var(--primary-light);
+
+  color:
+    var(--primary);
+}
+
+
+.stat-events {
+  background:
+    var(--blue-light);
+
+  color:
+    var(--blue);
+}
+
+
+.stat-pending {
+  background:
+    var(--orange-light);
+
+  color:
+    var(--orange);
+}
+
+
+.stat-approved {
+  background:
+    var(--green-light);
+
+  color:
+    var(--green);
+}
+
+
+/* =========================================================
+   Cards
+========================================================= */
+
+.admin-card {
+  background:
+    #fff;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    var(--shadow);
+
+  padding:
+    18px;
+}
+
+
+.admin-card h3 {
+  margin:
+    0;
+
+  font-size:
+    18px;
+
+  font-weight:
+    800;
+
+  color:
+    var(--text);
+}
+
+
+.card-title-row {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  margin-bottom:
+    14px;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    10px;
+}
+
+
+.card-title-row a {
+  color:
+    var(--blue);
+
+  font-size:
+    12px;
+
+  font-weight:
+    800;
+}
+
+
+.card-title-row a:hover {
+  text-decoration:
+    underline;
+}
+
+
+.small-select {
+  height:
+    30px;
+
+  padding:
+    0 12px;
+
+  border:
+    1px solid
+    var(--border);
+
+  background:
+    #fff;
+
+  color:
+    #7e879a;
+
+  border-radius:
+    9px;
+
+  font-size:
+    11px;
+
+  cursor:
+    pointer;
+}
+
+
+/* =========================================================
+   Charts
+========================================================= */
+
+.admin-charts-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1.25fr;
+
+  gap:
+    18px;
+
+  margin-bottom:
+    18px;
+}
+
+
+.chart-card {
+  min-height:
+    270px;
+}
+
+
+/* =========================================================
+   Category Chart
+========================================================= */
+
+.category-chart-wrap {
+  min-height:
+    220px;
+
+  margin-top:
+    18px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    190px 1fr;
+
+  align-items:
+    center;
+
+  gap:
+    22px;
+}
+
+
+.donut-chart {
+  width:
+    150px;
+
+  height:
+    150px;
+
+  border-radius:
+    50%;
+
+  background:
+    #eee;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  justify-self:
+    center;
+
+  position:
+    relative;
+}
+
+
+.donut-inner {
+  width:
+    94px;
+
+  height:
+    94px;
+
+  border-radius:
+    50%;
+
+  background:
+    #fff;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+}
+
+
+.donut-inner strong {
+  font-size:
+    25px;
+
+  line-height:
+    1;
+
+  font-weight:
+    800;
+
+  color:
+    var(--text);
+}
+
+
+.donut-inner span {
+  margin-top:
+    7px;
+
+  font-size:
+    11px;
+
+  color:
+    var(--muted);
+}
+
+
+.chart-legend {
+  margin:
+    0;
+
+  padding:
+    0;
+
+  list-style:
+    none;
+}
+
+
+.chart-legend li {
+  min-height:
+    28px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 95px;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  font-size:
+    12px;
+
+  color:
+    #7e879a;
+}
+
+
+.legend-name {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+}
+
+
+.chart-legend strong {
+  color:
+    var(--muted);
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  text-align:
+    left;
+
+  direction:
+    ltr;
+}
+
+
+.dot {
+  width:
+    8px;
+
+  height:
+    8px;
+
+  border-radius:
+    50%;
+
+  display:
+    inline-block;
+}
+
+
+.dot.blue {
+  background:
+    var(--blue);
+}
+
+
+.dot.green {
+  background:
+    var(--green);
+}
+
+
+.dot.purple {
+  background:
+    var(--primary);
+}
+
+
+.dot.orange {
+  background:
+    var(--orange);
+}
+
+
+.dot.pink {
+  background:
+    #ef6aa8;
+}
+
+
+/* =========================================================
+   Registration Line Chart
+========================================================= */
+
+.line-chart-box {
+  height:
+    220px;
+
+  padding-top:
+    6px;
+
+  position:
+    relative;
+}
+
+
+.line-chart-box svg {
+  width:
+    100%;
+
+  height:
+    190px;
+
+  display:
+    block;
+}
+
+
+.chart-grid-line {
+  stroke:
+    #edf0f5;
+
+  stroke-width:
+    1;
+}
+
+
+.chart-line {
+  fill:
+    none;
+
+  stroke:
+    var(--primary);
+
+  stroke-width:
+    4;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+
+.chart-marker {
+  stroke:
+    #9eb6ff;
+
+  stroke-width:
+    2;
+
+  stroke-dasharray:
+    6 6;
+}
+
+
+.chart-point {
+  fill:
+    var(--primary);
+}
+
+
+.chart-days {
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  color:
+    var(--muted);
+
+  font-size:
+    10px;
+
+  padding:
+    0 8px;
+
+  direction:
+    rtl;
+
+  gap:
+    6px;
+}
+
+
+.chart-empty-message {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  color:
+    var(--muted);
+
+  font-size:
+    12px;
+}
+
+
+/* =========================================================
+   Bottom
+========================================================= */
+
+.admin-bottom-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    18px;
+}
+
+
+.admin-event-list,
+.registration-list {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+}
+
+
+/* =========================================================
+   Event Row
+========================================================= */
+
+.admin-event-mini {
+  min-height:
+    76px;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  padding:
+    10px 0;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    58px
+    minmax(170px, 1fr)
+    70px
+    95px
+    105px;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  direction:
+    rtl;
+
+  transition:
+    background
+    var(--transition);
+}
+
+
+.admin-event-mini:hover {
+  background:
+    #fbfaff;
+}
+
+
+.admin-event-mini:last-child {
+  border-bottom:
+    none;
+}
+
+
+.admin-event-mini > div:nth-child(2) {
+  text-align:
+    right;
+}
+
+
+.admin-event-mini strong {
+  display:
+    block;
+
+  font-size:
+    13px;
+
+  font-weight:
+    800;
+
+  line-height:
+    1.5;
+
+  color:
+    var(--text);
+}
+
+
+.admin-event-mini small {
+  display:
+    block;
+
+  margin-top:
+    3px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+}
+
+
+/* =========================================================
+   Real Event Image / Fallback
+========================================================= */
+
+.admin-event-image-box {
+  width:
+    54px;
+
+  height:
+    54px;
+
+  min-width:
+    54px;
+
+  border-radius:
+    12px;
+
+  overflow:
+    hidden;
+
+  background:
+    var(--primary-light);
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+}
+
+
+.admin-event-image-box img {
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  display:
+    block;
+}
+
+
+.admin-event-image-fallback {
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  color:
+    var(--primary);
+
+  font-size:
+    19px;
+}
+
+
+.mini-location,
+.mini-date {
+  font-size:
+    11px;
+
+  color:
+    var(--muted);
+
+  white-space:
+    nowrap;
+}
+
+
+/* =========================================================
+   Registration
+========================================================= */
+
+.registration-row {
+  min-height:
+    70px;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  padding:
+    9px 0;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    42px 1fr 90px;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  direction:
+    rtl;
+
+  transition:
+    background
+    var(--transition);
+}
+
+
+.registration-row:hover {
+  background:
+    #fbfaff;
+}
+
+
+.registration-row:last-child {
+  border-bottom:
+    none;
+}
+
+
+.registration-row > div:nth-child(2) {
+  text-align:
+    right;
+}
+
+
+.registration-row strong {
+  display:
+    block;
+
+  font-size:
+    13px;
+
+  font-weight:
+    800;
+
+  color:
+    var(--text);
+}
+
+
+.registration-row small {
+  display:
+    block;
+
+  margin-top:
+    3px;
+
+  color:
+    var(--muted);
+
+  font-size:
+    11px;
+}
+
+
+.registration-row > span {
+  color:
+    var(--muted);
+
+  font-size:
+    10px;
+
+  white-space:
+    nowrap;
+}
+
+
+/* =========================================================
+   Registration Avatar
+========================================================= */
+
+.registration-avatar-box {
+  width:
+    38px;
+
+  height:
+    38px;
+
+  min-width:
+    38px;
+
+  border-radius:
+    50%;
+
+  overflow:
+    hidden;
+
+  background:
+    var(--primary-light);
+
+  color:
+    var(--primary);
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+}
+
+
+.registration-avatar-box img {
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+}
+
+
+.registration-avatar-fallback {
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+}
+
+
+/* =========================================================
+   Status
+========================================================= */
+
+.row-status {
+  width:
+    fit-content;
+
+  padding:
+    5px 12px;
+
+  border-radius:
+    20px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    800;
+}
+
+
+.row-status.published {
+  background:
+    var(--green-light);
+
+  color:
+    var(--green);
+}
+
+
+.row-status.review {
+  background:
+    var(--orange-light);
+
+  color:
+    var(--orange);
+}
+
+
+.row-status.finished {
+  background:
+    #edf2ff;
+
+  color:
+    var(--blue);
+}
+
+
+.row-status.rejected {
+  background:
+    var(--red-light);
+
+  color:
+    var(--red);
+}
+
+
+.type-green {
+  color:
+    var(--green);
+}
+
+
+.type-purple {
+  color:
+    var(--primary);
+}
+
+
+.type-blue {
+  color:
+    var(--blue);
+}
+
+
+.type-orange {
+  color:
+    var(--orange);
+}
+
+
+/* =========================================================
+   Show More
+========================================================= */
+
+.show-more-link {
+  margin-top:
+    14px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    6px;
+
+  color:
+    var(--primary);
+
+  font-size:
+    12px;
+
+  font-weight:
+    800;
+}
+
+
+.show-more-link:hover {
+  text-decoration:
+    underline;
+}
+
+
+/* =========================================================
+   Empty / Loading
+========================================================= */
+
+.dashboard-empty-list,
+.dashboard-list-loading,
+.dashboard-placeholder-row {
+  color:
+    var(--muted);
+
+  font-size:
+    12px;
+
+  text-align:
+    center;
+
+  padding:
+    20px;
+}
+
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+@media (
+  max-width:
+  1100px
+) {
+
+  .admin-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .admin-charts-grid,
+  .admin-bottom-grid {
+    grid-template-columns:
+      1fr;
+  }
+}
+
+
+@media (
+  max-width:
+  850px
+) {
+
+  .admin-stats {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .category-chart-wrap {
+    grid-template-columns:
+      1fr;
+
+    height:
+      auto;
+  }
+
+
+  .chart-legend li {
+    grid-template-columns:
+      1fr auto;
+  }
+
+
+  .admin-event-mini {
+    grid-template-columns:
+      54px 1fr;
+
+    gap:
+      10px;
+
+    padding:
+      12px 0;
+  }
+
+
+  .admin-event-mini .mini-location,
+  .admin-event-mini .mini-date,
+  .admin-event-mini .row-status {
+    grid-column:
+      2;
+
+    justify-self:
+      start;
+  }
+
+
+  .registration-row {
+    grid-template-columns:
+      42px 1fr;
+  }
+
+
+  .registration-row > span {
+    grid-column:
+      2;
+  }
+}

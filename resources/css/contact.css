@@ -1,0 +1,237 @@
+/* =========================================================
+   فرحة – Contact Page
+========================================================= */
+
+.ctp-page { background: #fff; }
+
+/* Hero */
+.ctp-hero { width: 100%; min-height: 230px; background: #fbf7ff; border-bottom: 1px solid #e8e3f4; overflow: hidden; }
+.ctp-hero-row { min-height: 230px; display: grid; grid-template-columns: 460px 1fr; align-items: center; gap: 38px; padding: 20px 0; }
+.ctp-hero-img { border-radius: var(--radius-md); overflow: hidden; }
+.ctp-hero-img img { width: 100%; height: 230px; object-fit: cover; display: block; }
+
+.ctp-hero-text { min-height: 170px; text-align: right; display: flex; align-items: center; gap: 20px; }
+.ctp-headset { width: 100px; height: 100px; border-radius: 50%; background: #eee3ff; display: grid; place-items: center; flex: 0 0 auto; }
+.ctp-headset img { width: 84px; height: 84px; object-fit: contain; display: block; }
+
+.ctp-title-area h1 { margin: 0; color: #4b4266; font-size: 34px; line-height: 1.3; font-weight: 800; }
+.ctp-title-area p { margin: 12px 0 14px; color: var(--muted); font-size: 15px; line-height: 1.85; font-weight: 600; }
+.ctp-wave { color: #f3bd3d; font-size: 32px; font-weight: 800; letter-spacing: 4px; }
+
+/* Main */
+.ctp-main { padding: 24px 0 50px; background: #fff; }
+
+.ctp-layout { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 22px; align-items: start; }
+
+/* Form Side */
+.ctp-form-side { display: flex; flex-direction: column; gap: 20px; }
+
+.ctp-form-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius-md);
+  box-shadow: var(--shadow); padding: 24px;
+}
+.ctp-form-card h2 { margin: 0; text-align: center; color: #4b4266; font-size: 22px; font-weight: 800; }
+.ctp-title-line { width: 52px; height: 3px; border-radius: 20px; background: var(--primary); margin: 10px auto 20px; }
+
+.ctp-form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+.ctp-input, .ctp-textarea {
+  width: 100%; margin-bottom: 14px; border: 1px solid var(--border); border-radius: 8px;
+  background: #fff; padding: 0 12px; display: flex; align-items: center; gap: 8px; transition: var(--transition);
+}
+.ctp-input:focus-within, .ctp-textarea:focus-within { border-color: var(--primary); }
+.ctp-input { height: 46px; }
+.ctp-input span, .ctp-textarea span { color: var(--primary); font-size: 15px; }
+.ctp-input input, .ctp-input select, .ctp-textarea textarea {
+  width: 100%; border: none; outline: none; background: transparent; color: var(--text); font-family: inherit; font-size: 13px;
+}
+.ctp-textarea { min-height: 90px; align-items: flex-start; padding-top: 12px; }
+.ctp-textarea textarea { min-height: 66px; resize: none; }
+.ctp-input.is-invalid, .ctp-textarea.is-invalid { border-color: #ff6b6b; }
+
+.ctp-send-btn {
+  width: 100%; height: 46px; border: none; border-radius: 8px; background: var(--primary); color: #fff;
+  font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 9px; transition: var(--transition);
+}
+.ctp-send-btn:hover { background: var(--primary-dark); }
+.ctp-privacy { margin: 12px 0 0; text-align: center; color: #a0a8b8; font-size: 12px; }
+
+/* Help card */
+.ctp-help-card {
+  min-height: 138px; border-radius: var(--radius-md); background: var(--primary-light); overflow: hidden;
+  padding: 18px 22px; display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 16px;
+}
+.ctp-help-card img { width: 100%; height: 100px; object-fit: contain; }
+.ctp-help-text h3 { margin: 0 0 8px; color: #4b4266; font-size: 17px; font-weight: 800; }
+.ctp-help-text p { margin: 0 0 12px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.ctp-help-text a {
+  height: 36px; padding: 0 18px; border-radius: 8px; background: var(--primary); color: #fff;
+  font-size: 13px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  transition: var(--transition);
+}
+.ctp-help-text a:hover { background: var(--primary-dark); }
+
+/* Info side */
+.ctp-info-side { display: flex; flex-direction: column; gap: 24px; }
+
+.ctp-methods-card, .ctp-faq-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow); padding: 24px;
+}
+
+.ctp-card-title { margin-bottom: 20px; display: flex; align-items: center; gap: 9px; }
+.ctp-card-title h2 { margin: 0; color: #4b4266; font-size: 21px; font-weight: 800; }
+.ctp-card-title span { color: var(--primary); font-size: 22px; }
+
+.ctp-methods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.ctp-method-box {
+  min-height: 150px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #fff;
+  padding: 18px 12px; text-align: center; color: var(--text); transition: var(--transition);
+}
+.ctp-method-box:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); border-color: transparent; }
+.ctp-method-box img { width: 52px; height: 52px; object-fit: contain; margin-bottom: 10px; }
+.ctp-method-box h3 { margin: 0 0 8px; color: #4b4266; font-size: 15px; font-weight: 800; }
+.ctp-method-box p { margin: 0 0 6px; color: var(--muted); font-size: 13px; }
+.ctp-method-box small { color: #a0a8b8; font-size: 12px; }
+
+/* FAQ */
+/* ==============================
+   FAQ - Contact Page
+================================ */
+
+.farha-faq-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 22px;
+    direction: rtl;
+}
+
+.farha-faq {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e5e7f0;
+    border-radius: 14px;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.farha-faq summary {
+    width: 100%;
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 16px 20px;
+    cursor: pointer;
+    list-style: none;
+    color: #626880;
+    font-size: 16px;
+    font-weight: 500;
+    direction: rtl;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.farha-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.farha-faq summary::marker {
+    content: "";
+}
+
+.farha-faq summary span {
+    flex: 1;
+    display: block;
+    text-align: right;
+}
+
+.farha-faq-icon {
+    flex-shrink: 0;
+    margin-right: 15px;
+    color: #667085;
+    font-size: 15px;
+    transition: transform 0.25s ease;
+}
+
+.farha-faq[open] .farha-faq-icon {
+    transform: rotate(180deg);
+}
+
+.farha-faq[open] summary {
+    color: #3f4768;
+    font-weight: 600;
+}
+
+.farha-faq-content {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 20px 18px;
+    box-sizing: border-box;
+    color: #7b8195;
+    font-size: 14px;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow: visible !important;
+}
+
+.farha-faq-more {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #30375e;
+    direction: rtl;
+    transition: 0.2s ease;
+}
+
+.farha-faq-more:hover {
+    color: #5361df;
+}
+
+.farha-faq-more > i {
+    font-size: 22px;
+    color: #6370e8;
+}
+
+.farha-faq-more > div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.farha-faq-more strong {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.farha-faq-more small {
+    margin-top: 2px;
+    color: #9a9daf;
+    font-size: 12px;
+}
+/* Responsive */
+@media (max-width: 1200px) {
+  .ctp-hero-row { grid-template-columns: 380px 1fr; }
+  .ctp-title-area h1 { font-size: 30px; }
+  .ctp-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 850px) {
+  .ctp-hero-row { grid-template-columns: 1fr; padding: 24px 0; }
+  .ctp-hero-img img { height: 180px; }
+  .ctp-hero-text { text-align: center; justify-content: center; flex-direction: column; }
+  .ctp-methods-grid, .ctp-form-grid, .ctp-help-card { grid-template-columns: 1fr; }
+  .ctp-help-card { text-align: center; }
+  .ctp-help-card img { margin: 0 auto; }
+}

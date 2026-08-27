@@ -1,0 +1,1385 @@
+/* =========================================================
+   فرحة – Organizer Events Page
+   resources/css/organizer-events.css
+========================================================= */
+
+
+/* =========================================================
+   Main Content
+========================================================= */
+
+.organizer-events-content {
+    padding-bottom: 28px;
+}
+
+
+/* =========================================================
+   Organizer Sidebar
+========================================================= */
+
+.organizer-sidebar .menu-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.organizer-profile {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.organizer-avatar {
+    width: 64px;
+    height: 64px;
+
+    margin: 0 auto 10px;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+    color: var(--primary);
+
+    display: grid;
+    place-items: center;
+
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.organizer-profile h3 {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.organizer-profile p {
+    margin: 4px 0 0;
+
+    font-size: 11px;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   Topbar Welcome
+========================================================= */
+
+.simple-welcome {
+    font-size: 14px;
+    font-weight: 800;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+/* =========================================================
+   PAGE HEADER BOX
+   نفس شكل بوكس لوحة تحكم المنظم
+========================================================= */
+
+.events-page-head {
+    margin: 24px 0 18px;
+
+    min-height: 125px;
+
+    padding: 22px 24px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+/* الجزء الذي يحتوي الأيقونة والعنوان */
+
+.events-head-info {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* أيقونة العنوان */
+
+.events-head-icon {
+    width: 52px;
+    height: 52px;
+
+    min-width: 52px;
+
+    border-radius: 14px;
+
+    background: var(--primary-light);
+    color: var(--primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+/* عنوان الصفحة */
+
+.events-head-info h1 {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: clamp(21px, 3vw, 28px);
+
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+
+/* النص أسفل العنوان */
+
+.events-head-info p {
+    margin: 7px 0 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* زر إضافة فعالية */
+
+.events-head-action {
+    min-width: 190px;
+    height: 46px;
+
+    padding: 0 20px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+.events-head-action:hover {
+    background: var(--primary-dark);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 24px
+        rgba(123, 77, 243, 0.25);
+}
+
+.events-head-action i {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   Primary Action
+   يستخدم أيضًا في Empty State
+========================================================= */
+
+.primary-action {
+    height: 44px;
+
+    padding: 0 20px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    border-radius: var(--radius-md);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+.primary-action:hover {
+    background: var(--primary-dark);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 24px
+        rgba(123, 77, 243, 0.28);
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.events-summary-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+.event-summary-card {
+    position: relative;
+
+    min-height: 120px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    padding: 18px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 58px 1fr;
+
+    align-items: center;
+
+    gap: 16px;
+
+    direction: ltr;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.event-summary-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* الخط العلوي */
+
+.event-summary-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    height: 4px;
+    width: 100%;
+}
+
+
+/* إجمالي */
+
+.event-summary-card.total::before {
+    background: var(--primary);
+}
+
+
+/* المقبولة */
+
+.event-summary-card.accepted::before {
+    background: var(--green);
+}
+
+
+/* قيد المراجعة */
+
+.event-summary-card.pending::before {
+    background: var(--orange);
+}
+
+
+/* المرفوضة */
+
+.event-summary-card.rejected::before {
+    background: var(--red);
+}
+
+
+/* =========================================================
+   Summary Icons
+========================================================= */
+
+.summary-icon-box {
+    width: 54px;
+    height: 54px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+/* إجمالي */
+
+.summary-icon-box.total {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+
+/* المقبولة */
+
+.summary-icon-box.accepted {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+
+/* قيد المراجعة */
+
+.summary-icon-box.pending {
+    background: var(--orange-light);
+    color: var(--orange);
+}
+
+
+/* المرفوضة */
+
+.summary-icon-box.rejected {
+    background: var(--red-light);
+    color: var(--red);
+}
+
+
+/* دعم الصور القديمة إن وجدت */
+
+.summary-icon {
+    width: 54px;
+    height: 54px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   Summary Content
+========================================================= */
+
+.summary-content {
+    direction: rtl;
+
+    text-align: right;
+}
+
+
+.summary-content p {
+    margin: 0 0 5px;
+
+    font-size: 13px;
+
+    color: var(--muted);
+}
+
+
+.summary-content h2 {
+    margin: 4px 0 10px;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    color: var(--text);
+}
+
+
+.summary-content a {
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+.summary-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   FILTER BOX
+========================================================= */
+
+.events-filter-box {
+    min-height: 54px;
+
+    margin-bottom: 16px;
+
+    padding: 8px 10px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   Search
+========================================================= */
+
+.search-box {
+    width: 280px;
+    height: 36px;
+
+    background: #f8f9fc;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    padding: 0 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.search-box i {
+    color: #a0a8b8;
+
+    font-size: 14px;
+}
+
+
+.search-box input {
+    flex: 1;
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    color: var(--text);
+}
+
+
+.search-box input::placeholder {
+    color: #a0a8b8;
+}
+
+
+/* =========================================================
+   Filter Tabs
+========================================================= */
+
+.filter-tabs {
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    overflow-x: auto;
+}
+
+
+.filter-tab {
+    height: 34px;
+
+    padding: 0 16px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #7e879a;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+
+.filter-tab:hover {
+    background: var(--primary-light);
+
+    color: var(--primary);
+}
+
+
+.filter-tab.active {
+    background: var(--primary);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   View Toggle
+========================================================= */
+
+.view-toggle {
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--border);
+
+    background: #ffffff;
+
+    border-radius: 9px;
+
+    color: #7e879a;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+
+.view-toggle:hover {
+    background: var(--primary-light);
+
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   Loading
+========================================================= */
+
+.events-loading {
+    min-height: 120px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   EVENTS TABLE
+========================================================= */
+
+.organizer-events-table {
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   Event Row
+========================================================= */
+
+.organizer-event-item {
+    min-height: 82px;
+
+    padding: 14px 16px;
+
+    border-bottom: 1px solid var(--border);
+
+    display: grid;
+
+    grid-template-columns:
+        90px
+        120px
+        110px
+        130px
+        1fr
+        260px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    transition: background var(--transition);
+}
+
+
+.organizer-event-item:hover {
+    background: #fbfaff;
+}
+
+
+.organizer-event-item:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   Event Actions
+========================================================= */
+
+.event-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.edit-row-btn {
+    height: 30px;
+
+    padding: 0 12px;
+
+    border-radius: 8px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+
+.edit-row-btn:hover {
+    background: var(--primary);
+
+    color: #ffffff;
+}
+
+
+.row-menu {
+    border: none;
+
+    background: transparent;
+
+    color: #9aa3b5;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: color var(--transition);
+}
+
+
+.row-menu:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.row-status {
+    width: fit-content;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* منشورة */
+
+.row-status.published {
+    background: var(--green-light);
+
+    color: var(--green);
+}
+
+
+/* قيد المراجعة */
+
+.row-status.review {
+    background: var(--orange-light);
+
+    color: var(--orange);
+}
+
+
+/* منتهية */
+
+.row-status.finished {
+    background: #edf2ff;
+
+    color: var(--blue);
+}
+
+
+/* مرفوضة */
+
+.row-status.rejected {
+    background: var(--red-light);
+
+    color: var(--red);
+}
+
+
+/* مسودة */
+
+.row-status.draft {
+    background: #f1f3f7;
+
+    color: #7e879a;
+}
+
+
+/* =========================================================
+   Event Information
+========================================================= */
+
+.item-capacity strong,
+.item-date span,
+.item-place span {
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: var(--text);
+}
+
+
+.item-capacity small,
+.item-date small,
+.item-place small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   Event Main Information
+========================================================= */
+
+.item-main {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.item-main img {
+    width: 54px;
+    height: 54px;
+
+    min-width: 54px;
+
+    border-radius: 12px;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #f4f3fb;
+}
+
+
+.item-main strong {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    color: var(--text);
+
+    transition: color var(--transition);
+}
+
+
+.item-main:hover strong {
+    color: var(--primary);
+}
+
+
+.item-main small {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   Event Type Colors
+========================================================= */
+
+.type-green {
+    color: var(--green);
+}
+
+
+.type-purple {
+    color: var(--primary);
+}
+
+
+.type-blue {
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   EMPTY STATES
+========================================================= */
+
+.events-empty {
+    min-height: 260px;
+
+    padding: 35px 20px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+}
+
+
+.events-empty-icon {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 14px;
+
+    border-radius: 18px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+}
+
+
+.events-empty h2 {
+    margin: 0 0 8px;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color: var(--text);
+}
+
+
+.events-empty p {
+    margin: 0 auto 18px;
+
+    max-width: 420px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.events-pagination {
+    margin-top: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.pagination-pages {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.events-pagination button {
+    height: 34px;
+
+    min-width: 36px;
+
+    padding: 0 13px;
+
+    border: 1px solid var(--border);
+
+    background: #ffffff;
+
+    color: #8c93a5;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+
+.events-pagination button:hover:not(:disabled) {
+    background: var(--primary-light);
+
+    color: var(--primary);
+}
+
+
+.events-pagination button.active {
+    background: var(--primary);
+
+    color: #ffffff;
+
+    border-color: var(--primary);
+}
+
+
+.events-pagination button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   Delete Modal
+========================================================= */
+
+#deleteEventModal .modal-content {
+    border: none;
+
+    border-radius: 18px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+
+#deleteEventModal .modal-header {
+    border-bottom: 1px solid var(--border);
+
+    padding: 18px 20px;
+}
+
+
+#deleteEventModal .modal-title {
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+
+#deleteEventModal .modal-body {
+    padding: 22px;
+
+    font-size: 14px;
+}
+
+
+#deleteEventModal .modal-footer {
+    border-top: 1px solid var(--border);
+
+    padding: 14px 20px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .events-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .organizer-event-item {
+        grid-template-columns:
+            80px
+            100px
+            90px
+            110px
+            1fr
+            210px;
+    }
+
+
+    .search-box {
+        width: 220px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - Tablet
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .events-page-head {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 20px;
+    }
+
+
+    .events-head-info {
+        align-items: flex-start;
+    }
+
+
+    .events-head-action {
+        width: 100%;
+    }
+
+
+    .events-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .events-filter-box {
+        height: auto;
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .search-box {
+        width: 100%;
+    }
+
+
+    .filter-tabs {
+        width: 100%;
+
+        padding-bottom: 4px;
+    }
+
+
+    .filter-tab {
+        white-space: nowrap;
+    }
+
+
+    .view-toggle {
+        align-self: flex-end;
+    }
+
+
+    .organizer-event-item {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        padding: 16px;
+    }
+
+
+    .item-main {
+        justify-content: flex-start;
+    }
+
+
+    .event-actions {
+        margin-top: 5px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - Mobile
+========================================================= */
+
+@media (max-width: 575.98px) {
+
+    .organizer-events-content {
+        padding-bottom: 20px;
+    }
+
+
+    .events-page-head {
+        margin-top: 18px;
+
+        padding: 18px;
+
+        min-height: auto;
+    }
+
+
+    .events-head-info {
+        gap: 11px;
+    }
+
+
+    .events-head-icon {
+        width: 46px;
+        height: 46px;
+
+        min-width: 46px;
+
+        font-size: 19px;
+    }
+
+
+    .events-head-info h1 {
+        font-size: 21px;
+    }
+
+
+    .events-head-info p {
+        font-size: 12px;
+    }
+
+
+    .events-head-action {
+        min-width: 0;
+
+        height: 44px;
+    }
+
+
+    .event-summary-card {
+        min-height: 105px;
+
+        padding: 15px;
+    }
+
+
+    .summary-icon-box,
+    .summary-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .summary-content h2 {
+        font-size: 26px;
+    }
+
+
+    .events-filter-box {
+        padding: 10px;
+    }
+
+
+    .events-empty {
+        min-height: 220px;
+
+        padding: 30px 16px;
+    }
+
+
+    .events-pagination {
+        gap: 5px;
+    }
+
+
+    .events-pagination button {
+        padding: 0 10px;
+    }
+
+}

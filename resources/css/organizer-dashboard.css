@@ -1,0 +1,851 @@
+/* =========================================================
+   فرحة – Organizer Dashboard
+========================================================= */
+
+
+/* =========================================================
+   Organizer Sidebar
+========================================================= */
+
+.organizer-sidebar .menu-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+
+.organizer-profile {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+
+.organizer-avatar {
+    width: 64px;
+    height: 64px;
+
+    margin: 0 auto 10px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0eaff,
+            #e7e1ff
+        );
+
+    color: var(--primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 20px
+        rgba(123, 77, 243, 0.13);
+}
+
+
+.organizer-profile h3 {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    color: var(--text);
+}
+
+
+.organizer-profile p {
+    margin: 4px 0 0;
+
+    font-size: 11px;
+
+    color: var(--muted);
+}
+
+
+
+/* =========================================================
+   Topbar
+========================================================= */
+
+.simple-welcome {
+    font-size: 14px;
+    font-weight: 800;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+
+/* =========================================================
+   Dashboard Header
+========================================================= */
+
+.organizer-head {
+    margin: 24px 0 18px;
+
+    padding: 22px 24px;
+
+    min-height: 125px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+}
+
+
+.organizer-head > div {
+    flex: 1;
+}
+
+
+.organizer-head h1 {
+    margin: 0;
+
+    font-size: clamp(21px, 3vw, 28px);
+    font-weight: 800;
+
+    color: var(--text);
+}
+
+
+.organizer-head p {
+    margin: 7px 0 0;
+
+    max-width: 600px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   Header Add Event Button
+========================================================= */
+
+.organizer-head-action {
+    min-width: 190px;
+    height: 46px;
+
+    padding: 0 20px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+    color: #fff;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.organizer-head-action:hover {
+    background: var(--primary-dark);
+
+    color: #fff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 24px
+        rgba(123, 77, 243, 0.25);
+}
+
+
+.organizer-head-action i {
+    font-size: 15px;
+}
+
+
+
+/* =========================================================
+   Statistics
+========================================================= */
+
+.organizer-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+.stat-card {
+    min-height: 112px;
+
+    padding: 18px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    display: grid;
+
+    grid-template-columns: 52px 1fr;
+
+    align-items: center;
+
+    gap: 14px;
+
+    direction: ltr;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.stat-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+.stat-icon-box {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+.stat-icon-box.purple {
+    background: #f0eaff;
+    color: #7b4df3;
+}
+
+
+.stat-icon-box.blue {
+    background: #eaf2ff;
+    color: #4c79ec;
+}
+
+
+.stat-icon-box.green {
+    background: #eafff4;
+    color: #22a96b;
+}
+
+
+.stat-icon-box.pink {
+    background: #fff0f7;
+    color: #e65b9b;
+}
+
+
+.stat-content {
+    direction: rtl;
+    text-align: right;
+}
+
+
+.stat-content p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+.stat-content h2 {
+    margin: 7px 0 0;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    color: var(--text);
+}
+
+
+
+/* =========================================================
+   Registration Requests
+========================================================= */
+
+.registration-requests-box {
+    margin-bottom: 22px;
+
+    padding: 20px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+}
+
+
+.requests-count {
+    min-width: 70px;
+
+    padding: 7px 14px;
+
+    border-radius: 999px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-align: center;
+}
+
+
+.registration-requests-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.registration-request-card {
+    padding: 15px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: #fff;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 1fr)
+        minmax(140px, .8fr)
+        minmax(170px, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 16px;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+
+.registration-request-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #ded4ff;
+
+    box-shadow:
+        0 9px 24px
+        rgba(73, 60, 130, 0.09);
+}
+
+
+.request-parent {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.request-parent-avatar {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+.request-parent strong,
+.request-child strong,
+.request-event strong {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+.request-parent small,
+.request-child small,
+.request-event small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+.request-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.request-approve-btn,
+.request-reject-btn {
+    min-height: 38px;
+
+    padding: 0 14px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+}
+
+
+.request-approve-btn {
+    border: 1px solid #bcebd1;
+
+    background: #edfff5;
+
+    color: #1d9b5d;
+}
+
+
+.request-approve-btn:hover {
+    background: #1fa866;
+
+    border-color: #1fa866;
+
+    color: #fff;
+}
+
+
+.request-reject-btn {
+    border: 1px solid #ffd0d0;
+
+    background: #fff4f4;
+
+    color: #df4c4c;
+}
+
+
+.request-reject-btn:hover {
+    background: #df4c4c;
+
+    border-color: #df4c4c;
+
+    color: #fff;
+}
+
+
+
+/* =========================================================
+   Recent Events
+========================================================= */
+
+.recent-events-box {
+    background: #fff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    padding: 18px;
+}
+
+
+.section-head {
+    margin-bottom: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.section-head h2 {
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.section-head p {
+    margin: 4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.small-outline-btn {
+    height: 38px;
+
+    padding: 0 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    color: #7e879a;
+
+    background: #fff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    display: inline-flex;
+    align-items: center;
+}
+
+
+.small-outline-btn:hover {
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    border-color: var(--primary-light);
+}
+
+
+
+/* =========================================================
+   Recent Event Rows
+========================================================= */
+
+.events-table {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.event-row {
+    min-height: 76px;
+
+    border-bottom: 1px solid var(--border);
+
+    display: grid;
+
+    grid-template-columns:
+        32px
+        120px
+        110px
+        130px
+        1fr
+        260px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    transition: background var(--transition);
+}
+
+
+.event-row:hover {
+    background: #fbfaff;
+}
+
+
+.event-row:last-child {
+    border-bottom: none;
+}
+
+
+.row-menu {
+    border: none;
+
+    background: transparent;
+
+    color: #9aa3b5;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+
+.row-status {
+    width: fit-content;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+.row-status.published {
+    background: var(--green-light);
+
+    color: var(--green);
+}
+
+
+.row-status.review {
+    background: var(--orange-light);
+
+    color: var(--orange);
+}
+
+
+.row-status.finished {
+    background: #ffeaf4;
+
+    color: #e84b8a;
+}
+
+
+.row-registrations strong,
+.row-date span,
+.row-location span {
+    display: block;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    color: var(--text);
+}
+
+
+.row-registrations small,
+.row-date small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+.row-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.row-title img {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 12px;
+
+    object-fit: cover;
+
+    background: #f5f5fa;
+}
+
+
+.row-title strong {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+.row-title:hover strong {
+    color: var(--primary);
+}
+
+
+.row-title small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+}
+
+
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .event-row {
+        grid-template-columns:
+            32px
+            100px
+            90px
+            110px
+            1fr
+            210px;
+    }
+}
+
+
+@media (max-width: 991.98px) {
+
+    .organizer-stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .registration-request-card {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+
+    .request-actions {
+        grid-column:
+            1 / -1;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .organizer-head {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .organizer-head-action {
+        width: 100%;
+    }
+
+
+    .section-head {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .event-row {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+
+        padding: 14px 0;
+    }
+}
+
+
+@media (max-width: 575.98px) {
+
+    .organizer-stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .registration-request-card {
+        grid-template-columns: 1fr;
+    }
+
+
+    .request-actions {
+        grid-column: auto;
+
+        flex-direction: column;
+    }
+
+
+    .request-approve-btn,
+    .request-reject-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,890 @@
+/* =========================================================
+   فرحة – Notifications Page (page-specific styles)
+   Loaded together with common.css
+========================================================= */
+
+.notifications-content {
+  padding-bottom: 24px;
+}
+
+
+/* =========================================================
+   Header
+========================================================= */
+/* نفس هيدر صفحة البروفايل */
+.pf-topbar {
+    background: #ffffff !important;
+    border-bottom: 1px solid #eeeeee;
+}
+.notifications-header {
+  margin: 30px 0 20px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.notifications-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.notifications-title h1 {
+  margin: 0;
+
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.2;
+  font-weight: 800;
+
+  color: var(--text);
+}
+
+.notifications-title p {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+
+  color: var(--muted);
+}
+
+.notifications-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mark-read,
+.delete-all {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border-radius: var(--radius-sm);
+
+  background: #fff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+
+.mark-read {
+  border: 1px solid var(--border);
+
+  color: var(--primary);
+}
+
+.mark-read:hover {
+  background: var(--primary);
+
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+.delete-all {
+  border: 1px solid #ffd6d6;
+
+  color: var(--red);
+}
+
+.delete-all:hover {
+  background: var(--red);
+
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+.mark-read:disabled,
+.delete-all:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   Tabs
+========================================================= */
+
+.notifications-tabs {
+  background: #fff;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  padding: 8px;
+
+  margin-bottom: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  overflow-x: auto;
+}
+
+.notification-tab {
+  height: 36px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #7e879a;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.notification-tab span {
+  margin-right: 5px;
+
+  opacity: 0.75;
+}
+
+.notification-tab:hover {
+  background: var(--primary-light);
+
+  color: var(--primary);
+}
+
+.notification-tab.active {
+  background: var(--primary);
+
+  color: #fff;
+}
+
+.notification-tab.active span {
+  opacity: 0.85;
+}
+
+
+/* =========================================================
+   List
+========================================================= */
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.notification-card {
+  min-height: 92px;
+
+  background: #fff;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  box-shadow: var(--shadow);
+
+  padding: 16px 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    120px
+    minmax(300px, 1fr)
+    46px;
+
+  align-items: center;
+
+  gap: 18px;
+
+  /*
+   * نحافظ على ترتيب الكرت الأصلي:
+   * الوقت والحذف يسار
+   * النص في المنتصف
+   * الأيقونة يمين
+   */
+  direction: ltr;
+
+  animation: fadeIn 0.4s ease both;
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    opacity var(--transition);
+}
+
+.notification-card:hover {
+  box-shadow: var(--shadow-hover);
+
+  transform: translateY(-1px);
+}
+
+.notification-card.unread {
+  border-right: 4px solid var(--primary);
+}
+
+.notification-card.removing {
+  opacity: 0;
+
+  transform: scale(0.97);
+}
+
+
+/* =========================================================
+   Left side
+   dismiss button + unread dot + time
+========================================================= */
+
+.notification-left {
+  direction: rtl;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 8px;
+
+  color: var(--muted);
+}
+
+.dismiss-btn {
+  width: 26px;
+  height: 26px;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #aeb5c4;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.dismiss-btn:hover {
+  background: var(--red-light);
+
+  color: var(--red);
+}
+
+.notification-left small {
+  font-size: 11px;
+
+  color: var(--muted);
+
+  white-space: nowrap;
+}
+
+.unread-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  background: var(--primary);
+
+  border-radius: 50%;
+
+  display: inline-block;
+}
+
+
+/* =========================================================
+   Middle - Text
+========================================================= */
+
+.notification-text {
+  direction: rtl;
+
+  text-align: right;
+}
+
+.notification-text h3 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 800;
+
+  color: var(--text);
+}
+
+.notification-text p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  color: #7e879a;
+}
+
+.notification-text a {
+  display: inline-block;
+
+  margin-top: 4px;
+
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.notification-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   Right side - Colored icon
+========================================================= */
+
+.notification-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.notification-icon.green {
+  background: var(--green-light);
+
+  color: var(--green);
+}
+
+.notification-icon.orange {
+  background: var(--orange-light);
+
+  color: var(--orange);
+}
+
+.notification-icon.blue {
+  background: var(--blue-light);
+
+  color: var(--blue);
+}
+
+.notification-icon.purple {
+  background: var(--primary-light);
+
+  color: var(--primary);
+}
+
+
+/* =========================================================
+   Empty / Loading / Error State
+========================================================= */
+
+.notifications-empty {
+  background: #fff;
+
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+
+  padding: 50px 20px;
+
+  text-align: center;
+}
+
+.notifications-empty i {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 34px;
+
+  color: var(--muted);
+}
+
+.notifications-empty strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.notifications-empty p {
+  margin: 0 0 14px;
+
+  font-size: 12px;
+
+  color: var(--muted);
+}
+
+#notificationsLoading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   Parent Notifications - Header / Sidebar fixes
+========================================================= */
+
+
+/* Top notification button */
+
+.pf-top-notification {
+  position: relative;
+
+  text-decoration: none;
+}
+
+
+/* Badges */
+
+.pf-notification-badge,
+.pf-sidebar-notification-badge {
+  min-width: 18px;
+  height: 18px;
+
+  padding: 0 5px;
+
+  border-radius: 20px;
+
+  background: var(--red, #ef4444);
+
+  color: #fff;
+
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Badge فوق الجرس */
+
+.pf-notification-badge {
+  position: absolute;
+
+  top: -7px;
+  right: -8px;
+}
+
+
+/* Badge داخل السايدبار */
+
+.pf-sidebar-notification-badge {
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   User Area
+========================================================= */
+
+/*
+ * منطقة المستخدم أصبحت رابط للبروفايل،
+ * لذلك نمنع شكل الرابط الافتراضي.
+ */
+
+.pf-user-area {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+.pf-user-area:hover,
+.pf-user-area:focus,
+.pf-user-area:active {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+/*
+ * السهم غير مطلوب نهائياً
+ */
+
+.pf-user-area > .bi-chevron-down,
+.pf-user-area .bi-chevron-down {
+  display: none !important;
+}
+
+
+/* =========================================================
+   Sidebar Active State
+========================================================= */
+
+.pf-sidebar .menu-link {
+  text-decoration: none;
+}
+
+.pf-sidebar .menu-link.active {
+  color: var(--primary);
+}
+
+
+/*
+ * لو الـCSS الأساسي عندك مسؤول عن الخلفية
+ * نخليه كما هو.
+ */
+
+
+/* =========================================================
+   Mobile Sidebar Overlay
+========================================================= */
+
+.pf-sidebar-overlay {
+  display: none;
+}
+
+
+/* =========================================================
+   Animations
+========================================================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   Responsive - Tablet
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+  .notifications-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .notification-card {
+    grid-template-columns:
+      95px
+      minmax(220px, 1fr)
+      42px;
+
+    gap: 14px;
+  }
+
+
+  /*
+   * Overlay الخاص بالسايدبار
+   */
+
+  .pf-sidebar-overlay.show {
+    display: block;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    z-index: 998;
+  }
+}
+
+
+/* =========================================================
+   Responsive - Mobile
+========================================================= */
+
+@media (max-width: 575.98px) {
+
+  .notifications-header {
+    margin-top: 20px;
+  }
+
+
+  .notifications-title {
+    align-items: flex-start;
+  }
+
+
+  .notifications-actions {
+    width: 100%;
+  }
+
+
+  .mark-read,
+  .delete-all {
+    flex: 1;
+
+    justify-content: center;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+
+
+  .notifications-tabs {
+    width: 100%;
+  }
+
+
+  .notification-card {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    gap: 12px;
+
+    padding: 18px 14px;
+  }
+
+
+  .notification-left {
+    justify-content: center;
+
+    order: 3;
+  }
+
+
+  .notification-text {
+    text-align: center;
+
+    order: 2;
+  }
+
+
+  .notification-icon {
+    margin: 0 auto;
+
+    order: 1;
+  }
+
+
+  .notification-text h3 {
+    font-size: 14px;
+  }
+
+
+  .notification-text p {
+    font-size: 12px;
+  }
+
+
+  .notifications-empty {
+    padding: 40px 16px;
+  }
+}
+/* =========================================================
+   Parent Sidebar - Unified
+========================================================= */
+
+.parent-sidebar {
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+}
+
+
+/* Menu */
+
+.parent-sidebar-menu {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 35px;
+}
+
+
+/* Links */
+
+.parent-sidebar-link {
+    width: 100%;
+    min-height: 52px;
+
+    padding: 0 18px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+
+.parent-sidebar-link i {
+    width: 24px;
+
+    text-align: center;
+
+    font-size: 19px;
+}
+
+
+/* Hover */
+
+.parent-sidebar-link:hover {
+    background: var(--primary-light);
+
+    color: var(--primary);
+}
+
+
+/* Active */
+
+.parent-sidebar-link.active {
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-weight: 800;
+}
+
+
+/* Notification badge */
+
+.parent-sidebar-link .pf-sidebar-notification-badge {
+    margin-right: auto;
+}
+
+
+/* Logout stays at bottom */
+
+.parent-sidebar-logout {
+    margin-top: auto;
+}
+
+
+/* =========================================================
+   Prevent other .menu styles from affecting Parent Sidebar
+========================================================= */
+
+.parent-sidebar .parent-sidebar-menu {
+    flex-direction: column !important;
+    align-items: stretch !important;
+}
+
+
+.parent-sidebar .parent-sidebar-link {
+    display: flex !important;
+}
+
+
+/* =========================================================
+   Mobile
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .parent-sidebar {
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        z-index: 999;
+
+        transform: translateX(100%);
+
+        transition: transform 0.25s ease;
+    }
+
+
+    .parent-sidebar.open {
+        transform: translateX(0);
+    }
+}
+
+/* ===== Parent unified UI reset ===== */
+.profile-page-final{background:#f5f6fb;}
+.pf-side-logo{display:none!important;}
+.pf-parent-sidebar-head{text-align:center;margin:4px 0 24px;}
+.pf-parent-name-circle{width:92px;height:92px;margin:0 auto 9px;padding:10px;border-radius:50%;background:#f1edff;color:var(--primary);box-shadow:0 6px 16px rgba(123,77,243,.13);display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;line-height:1.35;font-weight:800;overflow:hidden;word-break:break-word;}
+.pf-parent-role{color:var(--muted);font-size:11px;font-weight:700;}
+.pf-topbar{height:76px;background:transparent;border-bottom:0;}
+.pf-user-area{display:flex;align-items:center;gap:10px;}
+.pf-user-area img{display:block!important;width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--primary-light);}
+.pf-parent-welcome{margin:0;font-size:14px;font-weight:700;color:var(--text);}
+.pf-parent-welcome #topUserName{font-size:14px;font-weight:800;color:var(--text);}
+.pf-topbar-left{display:flex;align-items:center;gap:14px;}
+.pf-topbar-left .pf-breadcrumb{margin:0;}
+.pf-topbar-left .pf-breadcrumb strong{color:var(--primary);font-weight:800;}
+.pf-header-notification{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--border);color:var(--primary);display:flex;align-items:center;justify-content:center;position:relative;text-decoration:none;z-index:5;}
+.pf-header-notification:hover{background:var(--primary-light);color:var(--primary);}
+.pf-white-page-box{background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);padding:26px;min-height:calc(100vh - 120px);}
+.sidebar-overlay,.pf-sidebar-overlay{pointer-events:none;}
+.sidebar-overlay.show,.pf-sidebar-overlay.show{pointer-events:auto;}
+.pf-side-menu a,.pf-topbar-left a,.pf-breadcrumb a{pointer-events:auto!important;position:relative;z-index:3;}
+@media(max-width:850px){.pf-topbar{height:auto;min-height:76px;flex-wrap:wrap}.pf-topbar-left{width:100%;justify-content:space-between}.pf-white-page-box{padding:18px}}
